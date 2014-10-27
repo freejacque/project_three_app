@@ -1,27 +1,9 @@
-function(){
+var cards = [
+  {},
+];
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-} //function onload end
