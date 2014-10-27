@@ -13,6 +13,7 @@
     <link href="/public/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/public/javascript/underscore.js"></script>
     <script type="text/javascript" src="/public/javascript/main.js"></script>
     <script type="text/javascript" src="/public/javascript/javascript.js"></script>
   </head>
@@ -20,30 +21,26 @@
   <body>
     <h1>Hello from Index.html!</h1>
     <div id="container">
-      <div class="row" id="row1">
-        <div class="card_space" id="card1"></div>
-        <div class="card_space" id="card2"></div>
-        <div class="card_space" id="card3"></div>
-        <div class="card_space" id="card4"></div>
-        <div class="card_space" id="card5"></div>
-        <div class="card_space" id="card6"></div>
-      </div>
-      <div class="row" id="row2">
-        <div class="card_space" id="card7"></div>
-        <div class="card_space" id="card8"></div>
-        <div class="card_space" id="card9"></div>
-        <div class="card_space" id="card10"></div>
-        <div class="card_space" id="card11"></div>
-        <div class="card_space" id="card12"></div>
-      </div>
-      <div class="row" id="row3">
-        <div class="card_space" id="card13"></div>
-        <div class="card_space" id="card14"></div>
-        <div class="card_space" id="card15"></div>
-        <div class="card_space" id="card16"></div>
-        <div class="card_space" id="card17"></div>
-        <div class="card_space" id="card18"></div>
-      </div>
+      <div class="game-header" id="head" height="300px" width="100%"></div>
+      <script type="text/template" id="card-template">
+          <div class="card">
+            <div class="charge">
+              <span><%%= card.charge%></span>
+              <span><%%= card.charge2%></span>
+            </div>
+            <div class="plate">
+              <div class="symbol"><span><%%= card.symbol%></span></div>
+              <div class="name"><span><%%= card.name%></span></div>
+            </div>
+            <div class="info">
+              <div class="atomic-number"><span><%%= card.atomicNumber%></span></div>
+              <div class="electron_config"><span><%%= card.electronConfiguration%></span></div>
+            </div>
+            <div class="category">
+              <span><%%= card.category%></span>
+            </div>
+          </div>
+      </script>
     </div>
   </body>
 </html>

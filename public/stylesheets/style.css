@@ -3,3 +3,34 @@
   border: 5px;
   border-spacing: 2px;
 }
+
+.box {
+ -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+  -moz-box-shadow: 0px 0px 3px #000000;
+  -webkit-box-shadow: 0px 0px 3px #000000;
+  box-shadow: 0px 0px 3px #000000;
+  /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+}
+
+.card {
+  -webkit-box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  border: 2px solid black;
+  width: 16em;
+  height: 18em;
+  font-size: 8px;
+  position: relative;
+}
+
+.charge {
+  display: inline;
+  position: absolute;
+  right: 0;
+  right: 5px;
+  top: 4px;
+  font-size: 12px;
+}
