@@ -22,7 +22,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    "it works!"
+    render(:html, :index)
   end
 
 end
