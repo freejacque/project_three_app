@@ -1,6 +1,6 @@
 require './helpers/application_helper'
 
-class ApplicationController < Sinatra::Base
+class App < Sinatra::Base
 
   helpers ApplicationHelper
 
@@ -19,6 +19,10 @@ class ApplicationController < Sinatra::Base
   configure :test, :development do
     require 'sinatra/reloader'
     register Sinatra::Reloader
+  end
+
+  get '/' do
+    "it works!"
   end
 
 end
