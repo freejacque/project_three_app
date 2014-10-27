@@ -15,11 +15,11 @@ describe 'Element' do
   describe '#name, #symbol, #electron_configuration, #category, #charges' do
     it 'return an element\'s properties' do
       hydrogen = Element.find(1)
-      expect(hydrogen.name).to eq('Hydrogen')
+      expect(hydrogen.name).to eq('hydrogen')
       expect(hydrogen.symbol).to eq('H')
-      expect(hydrogen.electron_configuration).to eq('1s1')
-      expect(hydrogen.category).to eq('Hydrogen')
-      expect(hydrogen.charges).to eq([-1])
+      expect(hydrogen.electron_configuration).to eq('1')
+      expect(hydrogen.category).to eq('hydrogen')
+      expect(hydrogen.charges).to eq([-1, +1])
     end
   end
 end
