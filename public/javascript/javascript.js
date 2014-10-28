@@ -58,14 +58,15 @@ function seedAtomicNumbers(){
     },
   };
 
-
   function setTimer(){
     $gameHeader = $('.game-header')
-    $counter = 0;
-    setInterval(count, 1000);
+    var set = setInterval(count, 1000);
+    console.log(set);
   };
 
   function count(){
+    $timer = $('.timer');
     $counter += 1;
-    timer.textContent = "counter";
+    $timer.html("Time: " + $counter + "s");
+
   };

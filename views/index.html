@@ -21,13 +21,18 @@
 
   <body>
     <div id="container">
-      <header class="game-header" id="head" height="300px" width="100%">
-        <div class="game-header-container" width="1020px" height="600px">
-          <div id="app-name"><h1>Elemental</h1></div>
-          <div class="buttons">
-            <button id="new-game">
-          </div>
-        </div>
+      <header class="game-header" id="head" >
+        <ul class="game-header-container">
+          <li><div id="app-name"><h1>Elemental</h1></div><li>
+          <li><div class="counter">
+            <span class="timer"></span>
+          </div></li>
+          <li class="buttons">
+            <button id="player-stats">Stats</button>
+            <button id="game-rules">Rules</button>
+            <button id="new-game">New Game</button>
+          </li>
+        </ul>
       </header>
       <div class="deck-div"><ul id="deck"></ul></div>
     </div>

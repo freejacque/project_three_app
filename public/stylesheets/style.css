@@ -22,6 +22,7 @@ body {
 
 .game-header {
   position: relative;
+  display: inline-block;
   background-color: white;
   border-bottom: 2px solid black;
   margin-top: -22px;
@@ -36,21 +37,31 @@ body {
 }
 
 #app-name {
-  width: 200px;
-  padding-top: 14px;
+  color: black;
+  margin-right: 200px;
 }
 
+.counter {
+  margin-right: 157px;
+}
+
+.timer {
+  font-size: 20px;
+}
 .buttons {
   display: inline;
-  position: absolute;
-  width: 165px;
+  position: relative;
+  vertical-align: middle;
+  width: 500px;
   height: 40px;
 }
 
-.button {
-  display: inline;
-  width:50px;
-  border: 2px solid black;
+button {
+  width: 100px;
+  height: 35px;
+  border-radius: 23px;
+  background-color: lightblue;
+  border: solid black 2px;
 }
 
 h1 {

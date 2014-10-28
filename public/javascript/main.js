@@ -4,7 +4,8 @@ $( document ).ready(function() {
   console.log( "ready!" );
   window = $('window');
   body = $('body');
-
+  $newGame = $('#new-game');
+  $counter = 0;
   atomicNumbers = [];
   deck = [];
   elements = {
@@ -261,7 +262,7 @@ $( document ).ready(function() {
   window.onload = function(){
     seedAtomicNumbers();
     getElements();
-
+    $newGame.on('click', setTimer);
   };
 
 
