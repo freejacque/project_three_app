@@ -1,4 +1,5 @@
 var $card = $('.card')
+var $set;
 
 
 
@@ -12,6 +13,8 @@ function seedAtomicNumbers(){
   };
 
   function getElements(){
+    $('ul#deck').html("");
+    clearTimer();
     for(var i=0; i < 18; i++){
       atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
       element = elements[parseInt(atomicNumber, 10)];
@@ -19,6 +22,7 @@ function seedAtomicNumbers(){
       // debugger
       card.init();
     }
+    setTimer();
   };
 
   function Card(element){
@@ -48,25 +52,30 @@ function seedAtomicNumbers(){
     },
 
     init: function(){
-      console.log(' view:init', this);
       var view = this;
       if (!this.$element){
         view.render();
         $("#deck").append(view.$element);
-        console.log(this.$element);
       }
     },
   };
 
   function setTimer(){
-    $gameHeader = $('.game-header')
-    var set = setInterval(count, 1000);
+    set();
     console.log(set);
   };
 
   function count(){
-    $timer = $('.timer');
-    $counter += 1;
-    $timer.html("Time: " + $counter + "s");
-
+    $timer = $('#interval');
+    $counter++;
+    $timer.html($counter);
   };
+
+  function set(){
+    $set = setInterval(count, 1000);
+  };
+
+  function clearTimer(){
+    clearInterval($set);
+    $counter = 0;
+  }

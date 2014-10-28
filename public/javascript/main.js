@@ -261,8 +261,7 @@ $( document ).ready(function() {
 
   window.onload = function(){
     seedAtomicNumbers();
-    getElements();
-    $newGame.on('click', setTimer);
+    $newGame.on('click', getElements);
   };
 
 
