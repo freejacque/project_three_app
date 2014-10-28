@@ -12,6 +12,8 @@ function seedAtomicNumbers(){
       atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
       element = elements[parseInt(atomicNumber, 10)];
       var card = new Card(element);
+      // debugger
+      card.init();
     }
   };
 
@@ -42,7 +44,7 @@ function seedAtomicNumbers(){
       var view = this;
       if (!this.$element){
         view.render();
-        $("#card").append(view.$element);
+        $("#deck").append(view.$element);
         console.log(this.$element);
       }
     },
