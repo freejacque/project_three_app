@@ -39,10 +39,10 @@
 
 .plate {
   position: absolute;
+  left: 31px;
+  width: 60px;
   top: 40px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .symbol {
