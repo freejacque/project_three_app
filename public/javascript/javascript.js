@@ -1,3 +1,7 @@
+var $card = $('.card')
+
+
+
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
       atomicNumbers.push(i);
@@ -19,13 +23,6 @@ function seedAtomicNumbers(){
 
   function Card(element){
     this.element = element;
-    // this.atomicNumber = element.atomicNumber;
-    // this.name = element.name;
-    // this.symbol = element.symbol;
-    // this.electronConfiguration = element.electronConfiguration;
-    // this.category = element.category;
-    // this.charge = element.charges[0];
-    // this.charge2 = element.charges[1];
   }
 
   Card.prototype = {
@@ -35,7 +32,18 @@ function seedAtomicNumbers(){
       console.log(' view:render', this);
       var temp = this.template({element: this.element});
       this.$element = $(temp);
+      this.$element.draggable({
+        snap: true,
+        revert: true,
+      });
+      this.$element.droppable( {
+          drop: function(ev, ui) {
+            var dragElement = ui.draggable;
+            // dragElement.draggable( 'disable' );
+            dragElement.draggable( 'option', 'revert', false );
 
+          }
+        });
       return this;
     },
 
@@ -50,7 +58,14 @@ function seedAtomicNumbers(){
     },
   };
 
-  function populateBoard(){
-    for(var i=0; i < 18; i++){
-    }
+
+  function setTimer(){
+    $gameHeader = $('.game-header')
+    $counter = 0;
+    setInterval(count, 1000);
+  };
+
+  function count(){
+    $counter += 1;
+    timer.textContent = "counter";
   };

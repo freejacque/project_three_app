@@ -15,15 +15,21 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/public/javascript/underscore.js"></script>
     <script type="text/javascript" src="/public/javascript/main.js"></script>
+    <script src="tinytools.tourtip.min.js"></script>
 
   </head>
 
   <body>
     <div id="container">
-      <div class="game-header" id="head" height="300px" width="100%">
-        <h1>Elemental</h1>
-      </div>
-      <ul id="deck"></ul>
+      <header class="game-header" id="head" height="300px" width="100%">
+        <div class="game-header-container" width="1020px" height="600px">
+          <div id="app-name"><h1>Elemental</h1></div>
+          <div class="buttons">
+            <button id="new-game">
+          </div>
+        </div>
+      </header>
+      <div class="deck-div"><ul id="deck"></ul></div>
     </div>
 
     <!-- scripts -->
