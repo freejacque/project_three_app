@@ -1,8 +1,6 @@
 var $card = $('.card')
 var $set;
 
-
-
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
       atomicNumbers.push(i);
@@ -15,11 +13,10 @@ function seedAtomicNumbers(){
   function getElements(){
     $('ul#deck').html("");
     clearTimer();
-    for(var i=0; i < 18; i++){
+    for(var i=0; i < 15; i++){
       atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
       element = elements[parseInt(atomicNumber, 10)];
       var card = new Card(element);
-      // debugger
       card.init();
     }
     setTimer();
@@ -45,7 +42,6 @@ function seedAtomicNumbers(){
             var dragElement = ui.draggable;
             // dragElement.draggable( 'disable' );
             dragElement.draggable( 'option', 'revert', false );
-
           }
         });
       return this;
@@ -78,4 +74,4 @@ function seedAtomicNumbers(){
   function clearTimer(){
     clearInterval($set);
     $counter = 0;
-  }
+  };
