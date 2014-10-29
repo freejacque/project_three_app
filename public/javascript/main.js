@@ -117,7 +117,7 @@ $( document ).ready(function() {
       symbol: "Al",
       electronConfiguration: "2-8-3",
       category: "metal",
-      charges: [+2]
+      charges: [+3]
       },
     14: {
       atomicNumber: 14,
