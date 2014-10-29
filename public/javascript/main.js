@@ -21,7 +21,7 @@ $( document ).ready(function() {
       symbol: "H",
       electronConfiguration: "1",
       category: "hydrogen",
-      charges: [-1, +1]
+      charges: [+1]
     },
     2: {
       atomicNumber: 2,
@@ -61,7 +61,7 @@ $( document ).ready(function() {
       symbol: "C",
       electronConfiguration: "2-4",
       category: "nonmetal",
-      charges: [-4, +4]
+      charges: [-4]
       },
     7: {
       atomicNumber: 7,
@@ -125,7 +125,7 @@ $( document ).ready(function() {
       symbol: "Si",
       electronConfiguration: "2-8-4",
       category: "metalloid",
-      charges: [-4, +4]
+      charges: [+4]
       },
     15: {
       atomicNumber: 15,
@@ -181,7 +181,7 @@ $( document ).ready(function() {
       symbol: "Fe",
       electronConfiguration: "2-8-14-2",
       category: "trans metal",
-      charges: [+2, +3]
+      charges: [+2]
       },
     27: {
       atomicNumber: 27,
@@ -189,7 +189,7 @@ $( document ).ready(function() {
       symbol: "Co",
       electronConfiguration: "2-8-15-2",
       category: "trans metal",
-      charges: [+2, +3]
+      charges: [+2]
       },
     28: {
       atomicNumber: 28,
@@ -197,7 +197,7 @@ $( document ).ready(function() {
       symbol: "Ni",
       electronConfiguration: "2-8-16-2",
       category: "trans metal",
-      charges: [+2, +3]
+      charges: [+2]
       },
     29: {
       atomicNumber: 29,
@@ -205,7 +205,7 @@ $( document ).ready(function() {
       symbol: "Cu",
       electronConfiguration: "2-8-18-1",
       category: "trans metal",
-      charges: [+1, +2]
+      charges: [+2]
       },
     30: {
       atomicNumber: 30,
@@ -229,7 +229,7 @@ $( document ).ready(function() {
       symbol: "Ge",
       electronConfiguration: "2-8-18-4",
       category: "metalloid",
-      charges: [-4, +4]
+      charges: [+4]
       },
     33: {
       atomicNumber: 33,

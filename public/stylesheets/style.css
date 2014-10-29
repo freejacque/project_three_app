@@ -16,18 +16,20 @@ body {
   border-bottom: 2px solid black;
   margin-top: -22px;
   margin-bottom: -6px;
-  height: 85px;
+  height: 7em;
   width: 100%;
 }
 
 .game-header-container {
   display: inline;
   position: absolute;
+  width: 100%;
 }
 
 #app-name {
   color: black;
   margin-right: 0px;
+  font-size: 1.5em;
 }
 
 .counter {
@@ -36,25 +38,28 @@ body {
 }
 
 .timer {
-  font-size: 20px;
+  font-size: 1.5em;
 }
 .buttons {
   display: inline;
   position: relative;
-  vertical-align: middle;
+  vertical-align: super;
   width: 500px;
-  height: 40px;
   margin-right: 0px;
-  margin-left: 24px;
 }
 
 button {
-  width: 100px;
+  width: 7em;
   height: 35px;
   border-radius: 23px;
   background-color: lightblue;
   border: solid black 2px;
 }
+
+#interval {
+  color: #7FFF00;
+}
+
 
 h1 {
   text-align: center;
@@ -70,6 +75,7 @@ h1 {
   position: absolute;
   width: 78%;
   height: 100%;
+  margin-top: 1em;
 }
 
 .card {
@@ -88,6 +94,7 @@ h1 {
   position: absolute;
   right: -11px;
   width: 22%;
+  margin-top: 1em;
 }
 
 .molecule-box {
@@ -103,13 +110,15 @@ h1 {
 }
 
 #charge-equation {
-  width:14em;
   height: 2em;
   margin: 0px;
   position: relative;
-  text-align: left;
   font-weight: bold;
-  font-size: larger;
+  font-size: 2em;
+  text-align: center;
+  width: 10em;
+  margin-left: 1em;
+  margin-right: 3em;
 }
 
 .box {

@@ -1,4 +1,3 @@
-var $chargesAdded = 0;
 var $card = $('.card')
 var $set;
 var $box = $('.box');
@@ -22,7 +21,7 @@ function getElements(){
   $('y').html("");
   $chargesAdded = 0;
   $addCharges = [];
-  for(var i=0; i < 15; i++){
+  for(var i=0; i < 18; i++){
     atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
     element = elements[parseInt(atomicNumber, 10)];
     var card = new Card(element);
@@ -84,17 +83,17 @@ function addCharges(that){
   $dataNew = that;
   $chargesStr = that.draggable.context.innerText[0] + that.draggable.context.innerText[1];
   var charge = $.parseJSON($chargesStr);
+  var $chargesAdded = 0;
   // var $chargeParsed = $.parseInt('charge', 10);
   $addCharges.push(charge);
   // $chargeEq.text($addCharges).appendTo($chargeEq);
-  for(var i=0, len=addCharges.length; i < len; i++){
-    // var number = $.parseInt(addCharges[i]);
-    $chargesAdded = $chargesAdded += $addCharges[i];
+  for(var i=0, len = $addCharges.length; i < len; i++){
+    $chargesAdded += $addCharges[i];
     console.log($chargesAdded);
     // if($total === $netCharge){
     //   $chargeEq.text($netCharge).appendTo($chargeEq);
     // } else {
-      $('y').html($chargesAdded).appendTo($('chargeEq'));
+    $('y').html($chargesAdded).appendTo($('chargeEq'));
     // };
   };
 };
