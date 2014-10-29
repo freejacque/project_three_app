@@ -1,6 +1,7 @@
 var $card = $('.card')
 var $set;
 var $box = $('.box');
+var $that;
 
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
@@ -75,6 +76,17 @@ function seedAtomicNumbers(){
   $box.droppable({
     drop: function(event, ui){
       console.log('dropped');
+      console.dir(ui.draggable);
+      $that = ui.draggable;
       $box.css({visibility: 'hidden'});
     }
   });
+
+  function addCharges(){
+    console.log($that);
+    return $that;
+    var $chargesStr = $that.find('div.charges').find('span')[0].innerText;
+    $charge = $.parseInt($chargesStr);
+    return $charge;
+    $chargeEq.html($charge).appendTo($body);
+  };

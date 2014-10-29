@@ -6,6 +6,8 @@ $( document ).ready(function() {
   body = $('body');
   $newGame = $('#new-game');
   $counter = 0;
+  $chemEq = $('li#chemical-equation');
+  $chargeEq = $('li#charge-equation');
   atomicNumbers = [];
   deck = [];
   elements = {
@@ -262,6 +264,7 @@ $( document ).ready(function() {
   window.onload = function(){
     seedAtomicNumbers();
     $newGame.on('click', getElements);
+    $box.on('drop', addCharges);
   };
 
 

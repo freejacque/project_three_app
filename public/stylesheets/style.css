@@ -94,11 +94,16 @@ h1 {
   display: block;
 }
 
-.equation {
-  width:16em;
-  height: 13em;
+#chemical-equation {
+  width: 16em;
+  height: 6em;
   position: relative;
-  border: 2px dotted gray;
+}
+
+#charge-equation {
+  width:16em;
+  height: 7em;
+  position: relative;
 }
 
 .box {
@@ -181,22 +186,13 @@ li {
   margin-bottom: 10px;
 }
 
-.metal {
-  color: red;
-}
-
-.nonmetal {
-  color: blue;
-}
-
-.metalloid {
-  color: purple;
-}
-
-.transition_metal {
-  color: orange;
-}
-
-.noble_gas {
-  color: gray;
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
 }
