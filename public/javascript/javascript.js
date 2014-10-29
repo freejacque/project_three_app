@@ -39,7 +39,6 @@ function seedAtomicNumbers(){
       this.$element.draggable({
         snap: '.box',
         snapMode: 'inner',
-        // revert: true,
       });
       return this;
     },
