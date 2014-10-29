@@ -12,7 +12,7 @@
     <link href="/public/stylesheets/normalize.css" rel="stylesheet" type="text/css" media="all">
     <link href="/public/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/public/javascript/underscore.js"></script>
     <script type="text/javascript" src="/public/javascript/main.js"></script>
   </head>
@@ -23,10 +23,10 @@
         <ul class="game-header-container">
           <li><div id="app-name"><h1>ChemPop</h1></div><li>
           <li><div class="counter">
-            <span class="timer">Time: <z id='interval'>0</z>s</span>
+            <span class="timer">Time: <z id='interval'></z>s</span>
           </div></li>
-          <li id="chemical-equation"></li>
-          <li id="charge-equation"></li>
+        <!--   <li id="chemical-equation"></li> -->
+          <li id="charge-equation">Net Charge: <y id='net'></y></li>
           <li class="buttons">
             <button id="player-stats">Stats</button>
             <button id="game-rules">Rules</button>

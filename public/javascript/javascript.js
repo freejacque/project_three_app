@@ -19,7 +19,7 @@ function getElements(){
   $moleculeBox = $('#molecule-box');
   $('ul#deck').html("");
   clearTimer();
-  $chargeEq.text("");
+  $('y').html("");
   $chargesAdded = 0;
   $addCharges = [];
   for(var i=0; i < 15; i++){
@@ -84,12 +84,9 @@ function addCharges(that){
   $dataNew = that;
   $chargesStr = that.draggable.context.innerText[0] + that.draggable.context.innerText[1];
   var charge = $.parseJSON($chargesStr);
-  debugger
   // var $chargeParsed = $.parseInt('charge', 10);
-  debugger
   $addCharges.push(charge);
   // $chargeEq.text($addCharges).appendTo($chargeEq);
-  debugger
   for(var i=0, len=addCharges.length; i < len; i++){
     // var number = $.parseInt(addCharges[i]);
     $chargesAdded = $chargesAdded += $addCharges[i];
@@ -97,7 +94,7 @@ function addCharges(that){
     // if($total === $netCharge){
     //   $chargeEq.text($netCharge).appendTo($chargeEq);
     // } else {
-      $chargeEq.text($chargesAdded).appendTo($chargeEq);
+      $('y').html($chargesAdded).appendTo($('chargeEq'));
     // };
   };
 };
