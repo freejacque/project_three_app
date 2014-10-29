@@ -1,5 +1,6 @@
 var $card = $('.card')
 var $set;
+var $box = $('.box');
 
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
@@ -11,6 +12,7 @@ function seedAtomicNumbers(){
   };
 
   function getElements(){
+    $moleculeBox = $('#molecule-box');
     $('ul#deck').html("");
     clearTimer();
     for(var i=0; i < 15; i++){
@@ -18,6 +20,7 @@ function seedAtomicNumbers(){
       element = elements[parseInt(atomicNumber, 10)];
       var card = new Card(element);
       card.init();
+
     }
     setTimer();
   };
@@ -34,16 +37,10 @@ function seedAtomicNumbers(){
       var temp = this.template({element: this.element});
       this.$element = $(temp);
       this.$element.draggable({
-        snap: true,
-        revert: true,
+        snap: '.box',
+        snapMode: 'inner',
+        // revert: true,
       });
-      this.$element.droppable( {
-          drop: function(ev, ui) {
-            var dragElement = ui.draggable;
-            // dragElement.draggable( 'disable' );
-            dragElement.draggable( 'option', 'revert', false );
-          }
-        });
       return this;
     },
 
@@ -75,3 +72,10 @@ function seedAtomicNumbers(){
     clearInterval($set);
     $counter = 0;
   };
+
+  $box.droppable({
+    drop: function(event, ui){
+      console.log('dropped');
+      $box.css({visibility: 'hidden'});
+    }
+  });

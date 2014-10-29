@@ -9,17 +9,6 @@ body {
   position: absolute;
 }
 
-.box {
- -moz-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
-  -moz-box-shadow: 0px 0px 3px #000000;
-  -webkit-box-shadow: 0px 0px 3px #000000;
-  box-shadow: 0px 0px 3px #000000;
-  /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-}
-
 .game-header {
   position: relative;
   display: inline-block;
@@ -72,16 +61,13 @@ h1 {
 
 .main-page {
   display: flex;
+  height: 100%;
 }
 
 .deck-div {
   position: absolute;
   width: 78%;
-}
-
-.make-molecule-div {
-  position: absolute;
-  width: 22%;
+  height: 100%;
 }
 
 .card {
@@ -95,6 +81,39 @@ h1 {
   font-size: 8px;
   position: relative;
 }
+
+.make-molecule-div {
+  position: absolute;
+  right: -11px;
+  width: 22%;
+}
+
+.molecule-box {
+  margin-left: 11px;
+  margin-top: 84px;
+  display: block;
+}
+
+.equation {
+  width:16em;
+  height: 13em;
+  position: relative;
+  border: 2px dotted gray;
+}
+
+.box {
+  /*-webkit-box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);*/
+  border: 2px dotted black;
+  background-color: lightgray;
+  width: 16em;
+  height: 18em;
+  font-size: 8px;
+  position: relative;
+
+}
+
 
 .charge {
   display: inline;
