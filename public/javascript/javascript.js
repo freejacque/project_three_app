@@ -2,7 +2,7 @@ var $card = $('.card')
 var $set;
 var $box = $('.box');
 var $that;
-
+var $netCharge;
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
       atomicNumbers.push(i);
@@ -39,6 +39,7 @@ Card.prototype = {
     this.$element.draggable({
       snap: '.box',
       snapMode: 'inner',
+      stack: '.card',
     });
     return this;
   },
@@ -74,17 +75,24 @@ function clearTimer(){
 
 function addCharges(that){
   console.log(that);
+  $dataNew = that;
   $chargesStr = that.draggable.context.innerText[0] + that.draggable.context.innerText[1];
   var $charge = $.parseJSON($chargesStr);
-  $chargeEq.html($charge).appendTo($chargeEq);
+  $addCharges.push($charge);
+  for(var i=0, len=addCharges.length; i < len; i++){
+
+  };
+  $chargeEq.text($addCharges).appendTo($chargeEq);
 };
 
 $box.droppable({
   drop: function(event, ui){
     console.log('dropped');
-    // console.dir(ui.draggable);
+    ui.draggable.draggable("disable");
     $that = ui.draggable;
-    $box.css({visibility: 'hidden'});
+    $thatId = ui.draggable.prop('id');
+    console.log($thatId);
+    // $box.css({visibility: 'hidden'});
   }
 });
 

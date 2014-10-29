@@ -6,6 +6,7 @@ $( document ).ready(function() {
   $body = $('body');
   $newGame = $('#new-game');
   $counter = 0;
+  $addCharges = [];
   $chemEq = $('li#chemical-equation');
   $chargeEq = $('li#charge-equation');
   $box = $('.box');
