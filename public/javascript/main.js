@@ -3,11 +3,12 @@
 $( document ).ready(function() {
   console.log( "ready!" );
   window = $('window');
-  body = $('body');
+  $body = $('body');
   $newGame = $('#new-game');
   $counter = 0;
   $chemEq = $('li#chemical-equation');
   $chargeEq = $('li#charge-equation');
+  $box = $('.box');
   atomicNumbers = [];
   deck = [];
   elements = {
@@ -264,7 +265,12 @@ $( document ).ready(function() {
   window.onload = function(){
     seedAtomicNumbers();
     $newGame.on('click', getElements);
-    $box.on('drop', addCharges);
+    $box.on('drop', function(e,$that){
+      console.log(e);
+      console.log($that);
+      $newData = $that;
+      addCharges($that);
+    });
   };
 
 

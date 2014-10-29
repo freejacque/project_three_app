@@ -12,81 +12,79 @@ function seedAtomicNumbers(){
     };
   };
 
-  function getElements(){
-    $moleculeBox = $('#molecule-box');
-    $('ul#deck').html("");
-    clearTimer();
-    for(var i=0; i < 15; i++){
-      atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
-      element = elements[parseInt(atomicNumber, 10)];
-      var card = new Card(element);
-      card.init();
-
-    }
-    setTimer();
-  };
-
-  function Card(element){
-    this.element = element;
+function getElements(){
+  $moleculeBox = $('#molecule-box');
+  $('ul#deck').html("");
+  clearTimer();
+  for(var i=0; i < 15; i++){
+    atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
+    element = elements[parseInt(atomicNumber, 10)];
+    var card = new Card(element);
+    card.init();
   }
+  setTimer();
+};
 
-  Card.prototype = {
-    template: _.template($("#card-template").html()),
+function Card(element){
+  this.element = element;
+}
 
-    render: function(){
-      console.log(' view:render', this);
-      var temp = this.template({element: this.element});
-      this.$element = $(temp);
-      this.$element.draggable({
-        snap: '.box',
-        snapMode: 'inner',
-      });
-      return this;
-    },
+Card.prototype = {
+  template: _.template($("#card-template").html()),
 
-    init: function(){
-      var view = this;
-      if (!this.$element){
-        view.render();
-        $("#deck").append(view.$element);
-      }
-    },
-  };
+  render: function(){
+    console.log(' view:render', this);
+    var temp = this.template({element: this.element});
+    this.$element = $(temp);
+    this.$element.draggable({
+      snap: '.box',
+      snapMode: 'inner',
+    });
+    return this;
+  },
 
-  function setTimer(){
-    set();
-    console.log(set);
-  };
-
-  function count(){
-    $timer = $('#interval');
-    $counter++;
-    $timer.html($counter);
-  };
-
-  function set(){
-    $set = setInterval(count, 1000);
-  };
-
-  function clearTimer(){
-    clearInterval($set);
-    $counter = 0;
-  };
-
-  $box.droppable({
-    drop: function(event, ui){
-      console.log('dropped');
-      console.dir(ui.draggable);
-      $that = ui.draggable;
-      $box.css({visibility: 'hidden'});
+  init: function(){
+    var view = this;
+    if (!this.$element){
+      view.render();
+      $("#deck").append(view.$element);
     }
-  });
+  },
+};
 
-  function addCharges(){
-    console.log($that);
-    return $that;
-    var $chargesStr = $that.find('div.charges').find('span')[0].innerText;
-    $charge = $.parseInt($chargesStr);
-    return $charge;
-    $chargeEq.html($charge).appendTo($body);
-  };
+function setTimer(){
+  set();
+  console.log(set);
+};
+
+function count(){
+  $timer = $('#interval');
+  $counter++;
+  $timer.html($counter);
+};
+
+function set(){
+  $set = setInterval(count, 1000);
+};
+
+function clearTimer(){
+  clearInterval($set);
+  $counter = 0;
+};
+
+function addCharges(that){
+  console.log(that);
+  $chargesStr = that.draggable.context.innerText[0] + that.draggable.context.innerText[1];
+  var $charge = $.parseJSON($chargesStr);
+  $chargeEq.html($charge).appendTo($chargeEq);
+};
+
+$box.droppable({
+  drop: function(event, ui){
+    console.log('dropped');
+    // console.dir(ui.draggable);
+    $that = ui.draggable;
+    $box.css({visibility: 'hidden'});
+  }
+});
+
