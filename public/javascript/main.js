@@ -9,7 +9,9 @@ $( document ).ready(function() {
   $addCharges = [];
   $chemEq = $('li#chemical-equation');
   $chargeEq = $('li#charge-equation');
-  $box = $('.box');
+  $box1 = $('.box#1');
+  $box2 = $('.box#2');
+  $box3 = $('.box#3');
   atomicNumbers = [];
   deck = [];
   elements = {
@@ -266,15 +268,10 @@ $( document ).ready(function() {
   window.onload = function(){
     seedAtomicNumbers();
     $newGame.on('click', getElements);
-    $box.on('drop', function(e,$that){
-      console.log(e);
-      console.log($that);
-      $newData = $that;
-      addCharges($that);
-    });
+    $box1.on('drop', addOnDrop);
+    $box2.on('drop', addOnDrop);
+    $box3.on('drop', addOnDrop);
   };
-
-
 
 });  //document ready function end(don't erase!!!!)
 

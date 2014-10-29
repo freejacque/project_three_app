@@ -27,11 +27,11 @@ body {
 
 #app-name {
   color: black;
-  margin-right: 200px;
+  margin-right: 0px;
 }
 
 .counter {
-  margin-right: 157px;
+  margin-right: 0px;
   width: 88px;
 }
 
@@ -95,14 +95,14 @@ h1 {
 }
 
 #chemical-equation {
-  width: 16em;
-  height: 6em;
+  width: 2em;
+  height: 2em;
   position: relative;
 }
 
 #charge-equation {
-  width:16em;
-  height: 7em;
+  width:2em;
+  height: 2em;
   position: relative;
 }
 
