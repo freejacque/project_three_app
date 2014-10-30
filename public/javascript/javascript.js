@@ -3,7 +3,7 @@ var $set;
 var $box = $('.box');
 var $that;
 var $total;
-
+var $score = 0;
 
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
@@ -20,6 +20,7 @@ function getElements(){
   clearTimer();
   $('y').html("");
   $chargesAdded = 0;
+  $score = 0;
   $addCharges = [];
   for(var i=0; i < 18; i++){
     atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
@@ -90,11 +91,14 @@ function addCharges(that){
   for(var i=0, len = $addCharges.length; i < len; i++){
     $chargesAdded += $addCharges[i];
     console.log($chargesAdded);
-    // if($total === $netCharge){
-    //   $chargeEq.text($netCharge).appendTo($chargeEq);
-    // } else {
+    if($chargesAdded === 0){
+      $score++;
+      $('y').html($chargesAdded).appendTo($('chargeEq'));
+      $('#score').text($score).appendTo($('#score-li'));
+      $chargesAdded = 0;
+    } else {
     $('y').html($chargesAdded).appendTo($('chargeEq'));
-    // };
+    };
   };
 };
 
@@ -105,8 +109,7 @@ $box.droppable({
     console.log('dropped');
     ui.draggable.draggable("disable");
     $that = ui.draggable;
-    $thatId = ui.draggable.prop('id');
-    console.log($thatId);
+    // $that.remove();
     // $box.css({visibility: 'hidden'});
   }
 });

@@ -109,14 +109,22 @@ h1 {
   position: relative;
 }
 
+#score-li {
+  font-size: 1.5em;
+}
+
+#score {
+  color: blue;
+}
+
 #charge-equation {
   height: 2em;
   margin: 0px;
   position: relative;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
-  width: 10em;
+  width: 11em;
   margin-left: 1em;
   margin-right: 3em;
 }
