@@ -18,9 +18,10 @@ function getElements(){
   $moleculeBox = $('#molecule-box');
   $('ul#deck').html("");
   clearTimer();
+  $score = 0;
+  $('#score').text($score).appendTo($('#score-li'));
   $('y').html("");
   $chargesAdded = 0;
-  $score = 0;
   $addCharges = [];
   for(var i=0; i < 18; i++){
     atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
@@ -44,6 +45,7 @@ Card.prototype = {
     this.$element = $(temp);
     this.$element.draggable({
       snap: '.box',
+      // revert: true,
       snapMode: 'inner',
       stack: '.card',
     });
@@ -85,9 +87,7 @@ function addCharges(that){
   $chargesStr = that.draggable.context.innerText[0] + that.draggable.context.innerText[1];
   var charge = $.parseJSON($chargesStr);
   var $chargesAdded = 0;
-  // var $chargeParsed = $.parseInt('charge', 10);
   $addCharges.push(charge);
-  // $chargeEq.text($addCharges).appendTo($chargeEq);
   for(var i=0, len = $addCharges.length; i < len; i++){
     $chargesAdded += $addCharges[i];
     console.log($chargesAdded);
