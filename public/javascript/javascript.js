@@ -5,6 +5,7 @@ var $that;
 var $total;
 var $score = 0;
 
+// seeds atomic numbers
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
       atomicNumbers.push(i);
@@ -14,7 +15,20 @@ function seedAtomicNumbers(){
     };
   };
 
+// randomly selects atomic numbers and places the corresponding information on the cards
 function getElements(){
+  setVariables();
+  for(var i=0; i < 18; i++){
+    atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
+    element = elements[parseInt(atomicNumber, 10)];
+    var card = new Card(element);
+    card.init();
+  }
+  setTimer();
+};
+
+
+function setVariables(){
   $moleculeBox = $('#molecule-box');
   $('ul#deck').html("");
   clearTimer();
@@ -23,13 +37,6 @@ function getElements(){
   $('y').html("");
   $chargesAdded = 0;
   $addCharges = [];
-  for(var i=0; i < 18; i++){
-    atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
-    element = elements[parseInt(atomicNumber, 10)];
-    var card = new Card(element);
-    card.init();
-  }
-  setTimer();
 };
 
 function Card(element){
