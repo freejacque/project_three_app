@@ -50,13 +50,14 @@ function Card(element){
 Card.prototype = {
   template: _.template($("#card-template").html()),
 
+  // function for rendering the cards
   render: function(){
     console.log(' view:render', this);
     var temp = this.template({element: this.element});
     this.$element = $(temp);
     this.$element.draggable({
       snap: '.box',
-      // revert: true,
+      revert: true,
       snapMode: 'inner',
       stack: '.card',
     });
@@ -95,6 +96,7 @@ function clearTimer(){
   $counter = 0;
 };
 
+// function to add charges and append them & the score to the DOM
 function addCharges(that){
   console.log(that);
   $dataNew = that;
@@ -114,7 +116,9 @@ function addCharges(that){
       $score++;
       // puts the sum of charges on the DOM
       $('y').html($chargesAdded).appendTo($('chargeEq'));
+      // puts the score on the DOM
       $('#score').text($score).appendTo($('#score-li'));
+      // sets chargesAdded back to zero
       $chargesAdded = 0;
     } else {
     $('y').html($chargesAdded).appendTo($('chargeEq'));
@@ -133,17 +137,18 @@ $box.droppable({
     ui.draggable.draggable("disable");
     ui.draggable.revert("disable");
     $that = ui.draggable;
-    // $that.remove();
-    // $box.css({visibility: 'hidden'});
   }
 });
 
 // adds the charges of the dropped cards.
 function addOnDrop(e,$that){
-      console.log(e);
-      console.log($that);
-      $newData = $that;
-      addCharges($that);
-      console.log($addCharges);
-    };
+  console.log(e);
+  console.log($that);
+  $newData = $that;
+  addCharges($that);
+  console.log($addCharges);
+};
 
+function resetDroppables(){
+
+}
