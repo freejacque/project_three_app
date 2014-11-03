@@ -2,6 +2,7 @@
 
 $( document ).ready(function() {
   console.log( "ready!" );
+  // setting variables for use throughout the app.
   window = $('window');
   $body = $('body');
   $newGame = $('#new-game');
@@ -14,6 +15,10 @@ $( document ).ready(function() {
   $box3 = $('.box#3');
   atomicNumbers = [];
   deck = [];
+
+
+  // elements were selected for their frequent use.
+  // the information included is specific to the NYC chemistry regents.
   elements = {
     1: {
       atomicNumber: 1,
@@ -101,7 +106,7 @@ $( document ).ready(function() {
       symbol: "Na",
       electronConfiguration: "2-8-1",
       category: "metal",
-      charges: [-1]
+      charges: [+1]
     },
     12: {
       atomicNumber: 12,
@@ -265,6 +270,8 @@ $( document ).ready(function() {
       },
   };
 
+  // on onload the atomic numbers are seeded into the atomicNumbers array
+  // event listeners are added to the newGame button and the drop boxes
   window.onload = function(){
     seedAtomicNumbers();
     $newGame.on('click', getElements);
