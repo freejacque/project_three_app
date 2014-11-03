@@ -4,7 +4,8 @@ var $box = $('.box');
 var $that;
 var $total;
 var $score = 0;
-
+var $currentDraggables = [];
+var $thatIncrementer = 0;
 // seeds atomic numbers
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
@@ -105,7 +106,7 @@ function addCharges(that){
   // parses the charges into integers so they can be used in calculations
   var charge = $.parseJSON($chargesStr);
   var $chargesAdded = 0;
-  // pushed charges of each dropped card into teh array addCharges
+  // pushed charges of each dropped card into the array addCharges
   $addCharges.push(charge);
   // loop to add charges together and award points when net charge is zero
   for(var i=0, len = $addCharges.length; i < len; i++){
@@ -120,6 +121,11 @@ function addCharges(that){
       $('#score').text($score).appendTo($('#score-li'));
       // sets chargesAdded back to zero
       $chargesAdded = 0;
+      resetDroppables();
+      resetBoard();
+      $box.remove();
+
+      $currentDraggables = [];
     } else {
     $('y').html($chargesAdded).appendTo($('chargeEq'));
     };
@@ -134,8 +140,10 @@ $box.droppable({
 
   drop: function(event, ui){
     console.log('dropped');
+    ui.draggable.draggable({
+      revert: false,
+    });
     ui.draggable.draggable("disable");
-    ui.draggable.revert("disable");
     $that = ui.draggable;
   }
 });
@@ -144,11 +152,29 @@ $box.droppable({
 function addOnDrop(e,$that){
   console.log(e);
   console.log($that);
+  $thatIncrementer++;
   $newData = $that;
   addCharges($that);
+  $currentDraggables.push($that);
+  console.log($currentDraggables);
   console.log($addCharges);
 };
 
 function resetDroppables(){
+  for( var i = 0, len = $currentDraggables.length; i < len; i++){
+    console.log($currentDraggables[i]);
+    $currentDraggables[i].draggable.remove();
+  }
+};
 
-}
+function resetBoard(){
+  $('y').html("");
+  $chargesAdded = 0;
+  $addCharges = [];
+  for(var i=0; i < 18; i++){
+    atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
+    element = elements[parseInt(atomicNumber, 10)];
+    var card = new Card(element);
+    card.init();
+  }
+};
