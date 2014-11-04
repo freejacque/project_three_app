@@ -5,7 +5,7 @@ var $that;
 var $total;
 var $score = 0;
 var $currentDraggables = [];
-var $thatIncrementer = 0;
+var $numberOfCardsUsed = 0;
 // seeds atomic numbers
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
@@ -121,10 +121,8 @@ function addCharges(that){
       $('#score').text($score).appendTo($('#score-li'));
       // sets chargesAdded back to zero
       $chargesAdded = 0;
-      resetDroppables();
+      deleteDraggables();
       resetBoard();
-      $box.remove();
-
       $currentDraggables = [];
     } else {
     $('y').html($chargesAdded).appendTo($('chargeEq'));
@@ -152,7 +150,7 @@ $box.droppable({
 function addOnDrop(e,$that){
   console.log(e);
   console.log($that);
-  $thatIncrementer++;
+  $numberOfCardsUsed++;
   $newData = $that;
   addCharges($that);
   $currentDraggables.push($that);
@@ -160,21 +158,24 @@ function addOnDrop(e,$that){
   console.log($addCharges);
 };
 
-function resetDroppables(){
+function deleteDraggables(){
   for( var i = 0, len = $currentDraggables.length; i < len; i++){
+    console.log(i);
     console.log($currentDraggables[i]);
     $currentDraggables[i].draggable.remove();
-  }
+  };
+  resetBoard();
 };
 
 function resetBoard(){
   $('y').html("");
   $chargesAdded = 0;
   $addCharges = [];
-  for(var i=0; i < 18; i++){
+  for(var i=0; i < $numberOfCardsUsed; i++){
     atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
     element = elements[parseInt(atomicNumber, 10)];
     var card = new Card(element);
     card.init();
-  }
+  };
+  $numberOfCardsUsed = 0;
 };
