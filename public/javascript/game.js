@@ -1,11 +1,13 @@
 var $card = $('.card')
-var $set;
+var set;
 var $box = $('.box');
-var $that;
-var $total;
-var $score = 0;
+var that;
+var total;
+var score = 0;
 var $currentDraggables = [];
-var $numberOfCardsUsed = 0;
+var numberOfCardsUsed = 0;
+
+
 // seeds atomic numbers
 function seedAtomicNumbers(){
     for(i=1; i <= 20; i++){
@@ -35,44 +37,13 @@ function setVariables(){
   // clear the cards
   $deck.html("");
   clearTimer();
-  $score = 0;
-  $('#score').text($score).appendTo($('#score-li'));
+  score = 0;
+  $('#score').text(score).appendTo($('#score-li'));
   $('y').html("");
   $chargesAdded = 0;
-  $addCharges = [];
+  addCharges = [];
 };
 
-
-// constructor method for a card. this grabs all of the information from the
-function Card(element){
-  this.element = element;
-}
-
-Card.prototype = {
-  template: _.template($("#card-template").html()),
-
-  // function for rendering the cards
-  render: function(){
-    console.log(' view:render', this);
-    var temp = this.template({element: this.element});
-    this.$element = $(temp);
-    this.$element.draggable({
-      snap: '.box',
-      revert: true,
-      snapMode: 'inner',
-      stack: '.card',
-    });
-    return this;
-  },
-
-  init: function(){
-    var view = this;
-    if (!this.$element){
-      view.render();
-      $("#deck").append(view.$element);
-    }
-  },
-};
 
 function setTimer(){
   set();
@@ -82,19 +53,19 @@ function setTimer(){
 // incremnets the counter by 1 and sets it as the timer html
 function count(){
   $timer = $('#interval');
-  $counter++;
-  $timer.html($counter);
+  counter++;
+  $timer.html(counter);
 };
 
 // executes the count function every second.
 function set(){
-  $set = setInterval(count, 1000);
+  set = setInterval(count, 1000);
 };
 
 // clears the interval and sets the counter to zero
 function clearTimer(){
-  clearInterval($set);
-  $counter = 0;
+  clearInterval(set);
+  counter = 0;
 };
 
 // function to add charges and append them & the score to the DOM
@@ -107,18 +78,18 @@ function addCharges(that){
   var charge = $.parseJSON($chargesStr);
   var $chargesAdded = 0;
   // pushed charges of each dropped card into the array addCharges
-  $addCharges.push(charge);
+  addCharges.push(charge);
   // loop to add charges together and award points when net charge is zero
-  for(var i=0, len = $addCharges.length; i < len; i++){
-    $chargesAdded += $addCharges[i];
+  for(var i=0, len = addCharges.length; i < len; i++){
+    $chargesAdded += addCharges[i];
     console.log($chargesAdded);
     if($chargesAdded === 0){
       // increments the score
-      $score++;
+      score++;
       // puts the sum of charges on the DOM
       $('y').html($chargesAdded).appendTo($('chargeEq'));
       // puts the score on the DOM
-      $('#score').text($score).appendTo($('#score-li'));
+      $('#score').text(score).appendTo($('#score-li'));
       // sets chargesAdded back to zero
       $chargesAdded = 0;
       deleteDraggables();
@@ -131,7 +102,7 @@ function addCharges(that){
 };
 
 
-// makes the three boxes droppable and sets the draggable to variable $that
+// makes the three boxes droppable and sets the draggable to variable that
 // which allows it to be accessed in other functions.
 $box.droppable({
   tolerance: "fit",
@@ -142,20 +113,20 @@ $box.droppable({
       revert: false,
     });
     ui.draggable.draggable("disable");
-    $that = ui.draggable;
+    that = ui.draggable;
   }
 });
 
 // adds the charges of the dropped cards.
-function addOnDrop(e,$that){
+function addOnDrop(e,that){
   console.log(e);
-  console.log($that);
-  $numberOfCardsUsed++;
-  $newData = $that;
-  addCharges($that);
-  $currentDraggables.push($that);
+  console.log(that);
+  numberOfCardsUsed++;
+  $newData = that;
+  addCharges(that);
+  $currentDraggables.push(that);
   console.log($currentDraggables);
-  console.log($addCharges);
+  console.log(addCharges);
 };
 
 function deleteDraggables(){
@@ -170,12 +141,12 @@ function deleteDraggables(){
 function resetBoard(){
   $('y').html("");
   $chargesAdded = 0;
-  $addCharges = [];
-  for(var i=0; i < $numberOfCardsUsed; i++){
+  addCharges = [];
+  for(var i=0; i < numberOfCardsUsed; i++){
     atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
     element = elements[parseInt(atomicNumber, 10)];
     var card = new Card(element);
     card.init();
   };
-  $numberOfCardsUsed = 0;
+  numberOfCardsUsed = 0;
 };
