@@ -1,5 +1,5 @@
 var $card = $('.card')
-var set;
+var setVar;
 var $box = $('.box');
 var that;
 var total;
@@ -41,13 +41,13 @@ function setVariables(){
   $('#score').text(score).appendTo($('#score-li'));
   $('y').html("");
   $chargesAdded = 0;
-  addCharges = [];
+  addChargesVar = [];
 };
 
 
 function setTimer(){
   set();
-  console.log(set);
+  console.log(setVar);
 };
 
 // incremnets the counter by 1 and sets it as the timer html
@@ -59,7 +59,7 @@ function count(){
 
 // executes the count function every second.
 function set(){
-  set = setInterval(count, 1000);
+  setVar = setInterval(count, 1000);
 };
 
 // clears the interval and sets the counter to zero
@@ -68,8 +68,26 @@ function clearTimer(){
   counter = 0;
 };
 
+
+
+// makes the three boxes droppable and sets the draggable to variable that
+// which allows it to be accessed in other functions.
+$box.droppable({
+  tolerance: "fit",
+
+  drop: function(event, ui){
+    console.log('dropped');
+    ui.draggable.draggable({
+      revert: false,
+    });
+    ui.draggable.draggable("disable");
+    that = ui.draggable;
+  }
+});
+
+
 // function to add charges and append them & the score to the DOM
-function addCharges(that){
+function addCharge(that){
   console.log(that);
   $dataNew = that;
   // grabs the charge and sign from the dropped card as a string
@@ -78,10 +96,10 @@ function addCharges(that){
   var charge = $.parseJSON($chargesStr);
   var $chargesAdded = 0;
   // pushed charges of each dropped card into the array addCharges
-  addCharges.push(charge);
+  addChargesVar.push(charge);
   // loop to add charges together and award points when net charge is zero
-  for(var i=0, len = addCharges.length; i < len; i++){
-    $chargesAdded += addCharges[i];
+  for(var i=0, len = addChargesVar.length; i < len; i++){
+    $chargesAdded += addChargesVar[i];
     console.log($chargesAdded);
     if($chargesAdded === 0){
       // increments the score
@@ -101,32 +119,16 @@ function addCharges(that){
   };
 };
 
-
-// makes the three boxes droppable and sets the draggable to variable that
-// which allows it to be accessed in other functions.
-$box.droppable({
-  tolerance: "fit",
-
-  drop: function(event, ui){
-    console.log('dropped');
-    ui.draggable.draggable({
-      revert: false,
-    });
-    ui.draggable.draggable("disable");
-    that = ui.draggable;
-  }
-});
-
 // adds the charges of the dropped cards.
 function addOnDrop(e,that){
   console.log(e);
   console.log(that);
   numberOfCardsUsed++;
   $newData = that;
-  addCharges(that);
+  addCharge(that);
   $currentDraggables.push(that);
   console.log($currentDraggables);
-  console.log(addCharges);
+  console.log(addChargesVar);
 };
 
 function deleteDraggables(){
@@ -141,7 +143,7 @@ function deleteDraggables(){
 function resetBoard(){
   $('y').html("");
   $chargesAdded = 0;
-  addCharges = [];
+  addChargesVar = [];
   for(var i=0; i < numberOfCardsUsed; i++){
     atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
     element = elements[parseInt(atomicNumber, 10)];
