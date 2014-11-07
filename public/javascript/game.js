@@ -69,7 +69,6 @@ function clearTimer(){
 };
 
 
-
 // makes the three boxes droppable and sets the draggable to variable that
 // which allows it to be accessed in other functions.
 $box.droppable({
@@ -82,6 +81,7 @@ $box.droppable({
     });
     ui.draggable.draggable("disable");
     that = ui.draggable;
+    setTimeout(function() { ui.draggable.remove(); }, 1);
   }
 });
 
