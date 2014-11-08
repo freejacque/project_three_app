@@ -30,17 +30,22 @@ function getElements(){
   setTimer();
 };
 
-// set the variables for
+// set the variables for a new game
 function setVariables(){
   $moleculeBox = $('#molecule-box');
   $deck = $('ul#deck');
   // clear the cards
   $deck.html("");
   clearTimer();
+  // sets score to zero
   score = 0;
+  // appends the current score to the DOM
   $('#score').text(score).appendTo($('#score-li'));
+  // sets net charge to nothing on the DOM
   $('y').html("");
+  // sets $chargesAdded to zero
   $chargesAdded = 0;
+  // reset addChargesVar to an empty array
   addChargesVar = [];
 };
 
@@ -69,18 +74,23 @@ function clearTimer(){
 };
 
 
-// makes the three boxes droppable and sets the draggable to variable that
-// which allows it to be accessed in other functions.
+// makes any boxes droppable and sets the draggable to variable "that"
+// which allows the droppable to be accessible in other functions.
 $box.droppable({
+  // the cards need to fit onto the droppable for it to register
   tolerance: "fit",
 
   drop: function(event, ui){
     console.log('dropped');
+    // once the card is dropped it will no longer revert to it's original position
     ui.draggable.draggable({
       revert: false,
     });
+    // once card is dropped it is no longer draggable
     ui.draggable.draggable("disable");
+    // setting the draggable to global variable "that"
     that = ui.draggable;
+    // removes the dropped card form the box after 1 ms
     setTimeout(function() { ui.draggable.remove(); }, 1);
   }
 });
@@ -110,9 +120,8 @@ function addCharge(that){
       $('#score').text(score).appendTo($('#score-li'));
       // sets chargesAdded back to zero
       $chargesAdded = 0;
-      deleteDraggables();
+      // creates cards to replace the number of cards used for the previous point
       resetBoard();
-      $currentDraggables = [];
     } else {
     $('y').html($chargesAdded).appendTo($('chargeEq'));
     };
@@ -123,32 +132,32 @@ function addCharge(that){
 function addOnDrop(e,that){
   console.log(e);
   console.log(that);
+  // increments numberOfCardsUsed each time a card is dropped
   numberOfCardsUsed++;
+  // sets the passed variable "that" as a new variable
   $newData = that;
+  // instantiates the function addCharge and passes the parameter "that"
   addCharge(that);
+  // creates a log of the used cards
   $currentDraggables.push(that);
   console.log($currentDraggables);
   console.log(addChargesVar);
 };
 
-function deleteDraggables(){
-  for( var i = 0, len = $currentDraggables.length; i < len; i++){
-    console.log(i);
-    console.log($currentDraggables[i]);
-    $currentDraggables[i].draggable.remove();
-  };
-  resetBoard();
-};
-
 function resetBoard(){
+  // replaces previous net charge with nothing
   $('y').html("");
+  //  sets $chargesAdded to zero
   $chargesAdded = 0;
+  // resets addChargesVar to an empty array
   addChargesVar = [];
+  // creates a new random card for each card used for the last point
   for(var i=0; i < numberOfCardsUsed; i++){
     atomicNumber = atomicNumbers[Math.floor(Math.random() * atomicNumbers.length)];
     element = elements[parseInt(atomicNumber, 10)];
     var card = new Card(element);
     card.init();
   };
+  // resets the numberOfCardsUsed to zero
   numberOfCardsUsed = 0;
 };

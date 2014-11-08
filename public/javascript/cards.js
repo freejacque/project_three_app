@@ -11,6 +11,7 @@ Card.prototype = {
     console.log(' view:render', this);
     var temp = this.template({element: this.element});
     this.$element = $(temp);
+    // makes each card draggable
     this.$element.draggable({
       snap: '.box',
       revert: true,

@@ -11,8 +11,6 @@ $( document ).ready(function() {
   $chemEq = $('li#chemical-equation');
   $chargeEq = $('li#charge-equation');
   $box1 = $('.box#1');
-  $box2 = $('.box#2');
-  $box3 = $('.box#3');
   atomicNumbers = [];
   deck = [];
 
@@ -271,12 +269,10 @@ $( document ).ready(function() {
   };
 
   // on onload the atomic numbers are seeded into the atomicNumbers array
-  // event listeners are added to the newGame button and the drop boxes
+  // event listeners are added to the newGame button and the drop box
     seedAtomicNumbers();
     $newGame.on('click', getElements);
     $box1.on('drop', addOnDrop);
-    $box2.on('drop', addOnDrop);
-    $box3.on('drop', addOnDrop);
 
 });  //document ready function end(don't erase!!!!)
 
