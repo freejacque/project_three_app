@@ -56,6 +56,25 @@ button {
   border: solid black 2px;
 }
 
+.modal {
+  -webkit-box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.5);
+  border: 2px solid black;
+  background-color: white;
+  width: 40em;
+  height: 40em;
+  font-size: 12px;
+  position: relative;
+  left: 387px;
+  border-radius: 21px;
+}
+
+#rules-text{
+  margin-left: 22px;
+  font-size: 15px;
+}
+
 #interval {
   color: #7FFF00;
 }
@@ -88,6 +107,13 @@ h1 {
   height: 18em;
   font-size: 8px;
   position: relative;
+}
+
+#demo-card {
+  position: relative;
+  z-index: 1;
+  left: 170px;
+  top: 30px;
 }
 
 .make-molecule-div {
