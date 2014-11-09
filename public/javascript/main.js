@@ -13,6 +13,9 @@ $( document ).ready(function() {
   $box1 = $('.box#1');
   atomicNumbers = [];
   deck = [];
+  $deck  = $('.deck-div');
+  $stats = $('#player-stats');
+  $rules = $('#game-rules');
 
 
   // elements were selected for their frequent use.
@@ -272,8 +275,8 @@ $( document ).ready(function() {
   // event listeners are added to the newGame button and the drop box
     seedAtomicNumbers();
     $newGame.on('click', getElements);
+    $rules.on('click', showRules);
     $box1.on('drop', addOnDrop);
-
 });  //document ready function end(don't erase!!!!)
 
 

@@ -28,4 +28,12 @@ Card.prototype = {
       $("#deck").append(view.$element);
     }
   },
+
+  rulesInit: function(){
+    var view = this;
+    if (!this.$element){
+      view.render();
+      $rulesDiv.append(view.$element);
+    }
+  },
 };
