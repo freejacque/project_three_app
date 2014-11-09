@@ -70,6 +70,14 @@ button {
   border-radius: 21px;
 }
 
+.modal-title{
+  font-size: 14px;
+  color: gray;
+  margin-left: 35px;
+  font-size: 20px;
+  margin-bottom: -8px;
+}
+
 #rules-text{
   margin-left: 22px;
   font-size: 15px;
@@ -112,8 +120,8 @@ h1 {
 #demo-card {
   position: relative;
   z-index: 1;
-  left: 170px;
   top: 30px;
+  margin-left: 174px;
 }
 
 .make-molecule-div {

@@ -12,12 +12,13 @@ function demoCard(){
   element = elements[parseInt(atomicNumber, 10)];
   var card = new Card(element);
   card.rulesInit();
-  // card.attr("id", "demo-card");
+  card.attr('id', 'demo-card');
 };
 
 // creates a rules div, displays rules content & appends to DOM
 function showRules(){
   $rulesDiv = $('<div class="modal" id="rules"></div>').appendTo($deck);
+  $rulesTitle = $('<h2 class="modal-title">Rules</h2>').appendTo($rulesDiv);
   $rulesSpan = $('<span id="rules-text"></span>').appendTo($rulesDiv);
   $rulesText.appendTo($rulesSpan);
   $demoCardDiv = $('<div class="demo-card-div">').appendTo($rulesDiv);
