@@ -1,3 +1,4 @@
+
 function setTimer(){
   set();
   console.log(setVar);
@@ -18,6 +19,6 @@ function set(){
 
 // clears the interval and sets the counter to zero
 function clearTimer(){
-  clearInterval(set);
+  clearInterval(setVar);
   counter = 0;
 };
