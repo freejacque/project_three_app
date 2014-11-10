@@ -4,7 +4,8 @@ $rulesText  = $('<ul id="rules-ul"><li>The object of the game is to create an io
           '<li>negatively charged ions until they create a net charge of zero.</li>' +
           '<li>Each card is labeled in the upper right corner with a charge.</li>' +
           '<li>Once the net charge equals zero you will earn a point.</li>' +
-          '<li>Earn as many points as you can in one minute.</li></ul>');
+          '<li>Earn as many points as you can in one minute by dragging cards </li>' +
+          '<li>and dropping them on the gray square on the right of the board.</li></ul>');
 
 // creates a demo card for the rules
 function demoCard(){
@@ -12,7 +13,6 @@ function demoCard(){
   element = elements[parseInt(atomicNumber, 10)];
   var card = new Card(element);
   card.rulesInit();
-  card.attr('id', 'demo-card');
 };
 
 // creates a rules div, displays rules content & appends to DOM
@@ -29,9 +29,9 @@ function showRules(){
 
 // removes a div from the DOM
 function removeDiv(divToDelete){
-  divToDelete.remove();
+  divToDelete.detach();
   console.log("div deleted");
-}
+};
 
 function removeRulesDiv(){
   removeDiv($rulesDiv);

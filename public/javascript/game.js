@@ -28,6 +28,7 @@ function getElements(){
     card.init();
   }
   setTimer();
+  gameOver();
 };
 
 // set the variables for a new game
@@ -160,4 +161,12 @@ function resetBoard(){
   };
   // resets the numberOfCardsUsed to zero
   numberOfCardsUsed = 0;
+};
+
+function gameOver() {
+  if (counter === 60){
+    clearTimer();
+    $deck.empty();
+    $gameOverDiv = $('<div class="modal" id="game-over-div"').appendTo($deck);
+  }
 };
