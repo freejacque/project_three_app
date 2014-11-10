@@ -28,7 +28,6 @@ function getElements(){
     card.init();
   }
   setTimer();
-  gameOver();
 };
 
 // set the variables for a new game
@@ -50,31 +49,6 @@ function setVariables(){
   addChargesVar = [];
 };
 
-
-function setTimer(){
-  set();
-  console.log(setVar);
-};
-
-// incremnets the counter by 1 and sets it as the timer html
-function count(){
-  $timer = $('#interval');
-  counter++;
-  $timer.html(counter);
-};
-
-// executes the count function every second.
-function set(){
-  setVar = setInterval(count, 1000);
-};
-
-// clears the interval and sets the counter to zero
-function clearTimer(){
-  clearInterval(set);
-  counter = 0;
-};
-
-
 // makes any boxes droppable and sets the draggable to variable "that"
 // which allows the droppable to be accessible in other functions.
 $box.droppable({
@@ -95,7 +69,6 @@ $box.droppable({
     setTimeout(function() { ui.draggable.remove(); }, 1);
   }
 });
-
 
 // function to add charges and append them & the score to the DOM
 function addCharge(that){
@@ -164,9 +137,8 @@ function resetBoard(){
 };
 
 function gameOver() {
-  if (counter === 60){
-    clearTimer();
-    $deck.empty();
-    $gameOverDiv = $('<div class="modal" id="game-over-div"').appendTo($deck);
-  }
+  clearTimer();
+  $deck.empty();
+  $gameOverDiv = $('<div class="modal" id="game-over-div"').appendTo($deck);
+  $gameOverSpan = $('<span class="" id="game-over-span"').appendTo($gameOverDiv);
 };
