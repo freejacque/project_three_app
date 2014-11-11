@@ -9,7 +9,6 @@ function count(){
   $timer = $('#interval');
   counter++;
   $timer.html(counter);
-  clearTimer();
 };
 
 // executes the count function every second.
