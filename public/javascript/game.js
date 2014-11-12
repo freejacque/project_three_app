@@ -81,6 +81,7 @@ function addCharge(that){
   $dataNew = that;
   // grabs the charge and sign from the dropped card as a string
   $chargesStr = that.draggable.context.innerText[0] + that.draggable.context.innerText[1];
+  debugger
   // parses the charges into integers so they can be used in calculations
   var charge = $.parseJSON($chargesStr);
   var $chargesAdded = 0;

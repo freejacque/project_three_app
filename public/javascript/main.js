@@ -29,7 +29,8 @@ $( document ).ready(function() {
       symbol: "H",
       electronConfiguration: "1",
       category: "hydrogen",
-      charges: [+1]
+      charges: [+1],
+      compoundName: "hydrogen"
     },
     2: {
       atomicNumber: 2,
@@ -37,7 +38,8 @@ $( document ).ready(function() {
       symbol: "He",
       electronConfiguration: "2",
       category: "noble gas",
-      charges: [0]
+      charges: [0],
+      compoundName: "helium"
     },
     3: {
       atomicNumber: 3,
@@ -45,7 +47,8 @@ $( document ).ready(function() {
       symbol: "Li",
       electronConfiguration: "2-1",
       category: "metal",
-      charges: [+1]
+      charges: [+1],
+      compoundName: "lithium"
     },
     4: {
       atomicNumber: 4,
@@ -53,7 +56,8 @@ $( document ).ready(function() {
       symbol: "Be",
       electronConfiguration: "2-2",
       category: "metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "beryllium"
       },
     5: {
       atomicNumber: 5,
@@ -61,7 +65,8 @@ $( document ).ready(function() {
       symbol: "B",
       electronConfiguration: "2-3",
       category: "metalloid",
-      charges: [+3]
+      charges: [+3],
+      compoundName: "boron"
       },
     6: {
       atomicNumber: 6,
@@ -70,7 +75,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-4",
       category: "nonmetal",
       charges: [-4],
-      compundName: "carbonide"
+      compoundName: "carbonide"
       },
     7: {
       atomicNumber: 7,
@@ -79,7 +84,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-5",
       category: "nonmetal",
       charges: [-3],
-      compundName: "nitride"
+      compoundName: "nitride"
       },
     8: {
       atomicNumber: 8,
@@ -88,7 +93,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-6",
       category: "nonmetal",
       charges: [-2],
-      compundName: "oxide"
+      compoundName: "oxide"
       },
     9: {
       atomicNumber: 9,
@@ -97,7 +102,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-7",
       category: "nonmetal",
       charges: [-1],
-      compundName: "fluoride"
+      compoundName: "fluoride"
       },
     10: {
       atomicNumber: 10,
@@ -105,7 +110,8 @@ $( document ).ready(function() {
       symbol: "Ne",
       electronConfiguration: "2-8",
       category: "noble gas",
-      charges: [0]
+      charges: [0],
+      compoundName: "neon",
       },
     11: {
       atomicNumber: 11,
@@ -113,7 +119,8 @@ $( document ).ready(function() {
       symbol: "Na",
       electronConfiguration: "2-8-1",
       category: "metal",
-      charges: [+1]
+      charges: [+1],
+      compoundName: "sodium"
     },
     12: {
       atomicNumber: 12,
@@ -121,7 +128,8 @@ $( document ).ready(function() {
       symbol: "Mg",
       electronConfiguration: "2-8-2",
       category: "metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "magnesium"
       },
     13: {
       atomicNumber: 13,
@@ -129,7 +137,8 @@ $( document ).ready(function() {
       symbol: "Al",
       electronConfiguration: "2-8-3",
       category: "metal",
-      charges: [+3]
+      charges: [+3],
+      compoundName: "aluminum"
       },
     14: {
       atomicNumber: 14,
@@ -137,7 +146,8 @@ $( document ).ready(function() {
       symbol: "Si",
       electronConfiguration: "2-8-4",
       category: "metalloid",
-      charges: [+4]
+      charges: [+4],
+      compoundName: "silicon"
       },
     15: {
       atomicNumber: 15,
@@ -146,7 +156,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-8-5",
       category: "nonmetal",
       charges: [-3],
-      compundName: "phosphide"
+      compoundName: "phosphide"
       },
     16: {
       atomicNumber: 16,
@@ -155,7 +165,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-8-6",
       category: "nonmetal",
       charges: [-2],
-      compundName: "sulfide"
+      compoundName: "sulfide"
       },
     17: {
       atomicNumber: 17,
@@ -164,7 +174,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-8-7",
       category: "nonmetal",
       charges: [-1],
-      compundName: "chloride"
+      compoundName: "chloride"
       },
     18: {
       atomicNumber: 18,
@@ -172,7 +182,8 @@ $( document ).ready(function() {
       symbol: "Ar",
       electronConfiguration: "2-8-8",
       category: "noble gas",
-      charges: [0]
+      charges: [0],
+      compoundName: "argon"
       },
     19: {
       atomicNumber: 19,
@@ -180,7 +191,8 @@ $( document ).ready(function() {
       symbol: "K",
       electronConfiguration: "2-8-8-1",
       category: "metal",
-      charges: [+1]
+      charges: [+1],
+      compoundName: "potassium"
       },
     20: {
       atomicNumber: 20,
@@ -188,7 +200,8 @@ $( document ).ready(function() {
       symbol: "Ca",
       electronConfiguration: "2-8-8-2",
       category: "metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "calcium"
       },
     26: {
       atomicNumber: 26,
@@ -196,7 +209,8 @@ $( document ).ready(function() {
       symbol: "Fe",
       electronConfiguration: "2-8-14-2",
       category: "trans metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "iron"
       },
     27: {
       atomicNumber: 27,
@@ -204,7 +218,8 @@ $( document ).ready(function() {
       symbol: "Co",
       electronConfiguration: "2-8-15-2",
       category: "trans metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "cobalt"
       },
     28: {
       atomicNumber: 28,
@@ -212,7 +227,8 @@ $( document ).ready(function() {
       symbol: "Ni",
       electronConfiguration: "2-8-16-2",
       category: "trans metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "nickel"
       },
     29: {
       atomicNumber: 29,
@@ -220,7 +236,8 @@ $( document ).ready(function() {
       symbol: "Cu",
       electronConfiguration: "2-8-18-1",
       category: "trans metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "copper"
       },
     30: {
       atomicNumber: 30,
@@ -228,7 +245,8 @@ $( document ).ready(function() {
       symbol: "Zn",
       electronConfiguration: "2-8-8-1",
       category: "trans metal",
-      charges: [+2]
+      charges: [+2],
+      compoundName: "zinc"
       },
     31: {
       atomicNumber: 31,
@@ -236,7 +254,8 @@ $( document ).ready(function() {
       symbol: "Ga",
       electronConfiguration: "2-8-18-3",
       category: "metal",
-      charges: [+3]
+      charges: [+3],
+      compoundName: "gallium"
       },
     32: {
       atomicNumber: 32,
@@ -244,7 +263,8 @@ $( document ).ready(function() {
       symbol: "Ge",
       electronConfiguration: "2-8-18-4",
       category: "metalloid",
-      charges: [+4]
+      charges: [+4],
+      compoundName: "germanium"
       },
     33: {
       atomicNumber: 33,
@@ -253,7 +273,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-8-18-5",
       category: "metalloid",
       charges: [-3],
-      compundName: "arsenide"
+      compoundName: "arsenide"
       },
     34: {
       atomicNumber: 34,
@@ -262,7 +282,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-8-18-6",
       category: "nonmetal",
       charges: [-2],
-      compundName: "selenide"
+      compoundName: "selenide"
       },
     35: {
       atomicNumber: 35,
@@ -271,7 +291,7 @@ $( document ).ready(function() {
       electronConfiguration: "2-8-18-7",
       category: "nonmetal",
       charges: [-1],
-      compundName: "bromide"
+      compoundName: "bromide"
       },
     36: {
       atomicNumber: 36,
@@ -279,7 +299,8 @@ $( document ).ready(function() {
       symbol: "Kr",
       electronConfiguration: "2-8-18-8",
       category: "noble gas",
-      charges: [0]
+      charges: [0],
+      compoundName: "krypton"
       },
   };
 
