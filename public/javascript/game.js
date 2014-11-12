@@ -5,9 +5,7 @@ var $box = $('.box');
 var that;
 var total;
 var score = 0;
-var bestScore = 0;
-var bestScoreDate;
-var newBestScore;
+// var $bestScoreDate = $.jStorage.get("bestScoreDate");
 var $currentDraggables = [];
 var numberOfCardsUsed = 0;
 var elementsUsed = [];
@@ -145,13 +143,14 @@ function resetBoard(){
 };
 
 function setBestScore(){
-  if(score > bestScore){
+  $bestScore = $.jStorage.get("bestScore");
+  if(score > $bestScore){
+    $bestScore = score;
     // sets the current score as the best score
-    bestScore = score;
-    $.jStorage.set("bestScore", bestScore);
+    $.jStorage.set("bestScore", score);
     // sets the date the new best score was achieved
-    bestScoreDate = Date.now;
-    $.jStorage.set("bestScoreDate", bestScoreDate);
+    $bestScoreDate = Date.now;
+    $.jStorage.set("bestScoreDate", $bestScoreDate);
   }; //else {
   //   best score stays the same
   //   bestScore = bestScore;

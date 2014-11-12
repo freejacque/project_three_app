@@ -1,6 +1,3 @@
-var $newBestScore = $.jStorage.get("bestScore");
-// var $bestScoreDate = $.jStorage.get(bestScoreDate);
-
 var $rulesText  = $('<ul id="rules-ul"><li>' +
                 'The object of the game is to create ionic compounds using cards' +
                 ' like the one below. Each card has a charge in the upper right corner.' +
@@ -11,12 +8,6 @@ var $rulesText  = $('<ul id="rules-ul"><li>' +
                 ' Remember that the positive ion(s) always go first.' +
                 '</li></ul>');
 
-var $statsText  = $('<ul id="stats-ul"><li>' +
-                'Your best score is: ' +
-                 $newBestScore +
-                ' made on ' +
-                 // $bestScoreDate +
-                '</li></ul>');
 
 // creates a demo card for the rules
 function demoCard(){
@@ -47,6 +38,12 @@ function showRules(){
 };
 
 function showStats(){
+  var $statsText  = $('<ul id="stats-ul"><li>' +
+                  'Your best score is: ' +
+                   $.jStorage.get("bestScore") +
+                  ' made on ' +
+                   $.jStorage.get("bestScoreDate") +
+                  '</li></ul>');
   $deckDiv.empty();
   clearTimer();
   $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deckDiv);
@@ -55,6 +52,7 @@ function showStats(){
   $statsText.appendTo($statsSpan);
   $statsDiv.on('click', removeStatsDiv);
 };
+
 
 function gameOver() {
   clearTimer();
@@ -66,7 +64,7 @@ function gameOver() {
   $gameScoreDiv = $('<div class="game-score-div">').appendTo($gameOverDiv);
   $gameScoreSpan = $('<span class="score-span" id="game-score-span">').html("Current Score: " + score + " pts").appendTo($gameScoreDiv);
   $bestScoreDiv = $('<div class="game-score-div">').appendTo($gameOverDiv);
-  $bestScoreSpan = $('<span class="score-span" id="best-score-span">').html("Best Score: " + bestScore + " pts").appendTo($bestScoreDiv);
+  $bestScoreSpan = $('<span class="score-span" id="best-score-span">').html("Best Score: " + $bestScore + " pts").appendTo($bestScoreDiv);
   setInterval(blinker, 1000);
   $gameOverDiv.on('click', removeGameOverDiv);
 };
