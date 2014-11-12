@@ -36,8 +36,9 @@ function getElements(){
 
 // set the variables for a new game
 function setVariables(){
+  $deckDiv.empty();
   $moleculeBox = $('#molecule-box');
-  $deck = $('ul#deck');
+  $deck = $('<ul id="deck">').appendTo($deckDiv);
   // clear the cards
   $deck.html("");
   clearTimer();
@@ -148,7 +149,7 @@ function setBestScore(){
     // sets the date the new best score was achieved
     bestScoreDate = Date.now;
   }; //else {
-    // best score stays the same
+  //   best score stays the same
   //   bestScore = bestScore;
-  // }
+  // };
 };

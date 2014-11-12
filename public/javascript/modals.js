@@ -27,15 +27,16 @@ function demoCard(){
 // creates a rules div, displays rules content & appends to DOM
 function showRules(){
   // clears any cards that may be displaying
-  $deck.empty();
+  $deckDiv.empty();
   // clears the timer
   clearTimer();
   // appends a rules div to the main page
-  $rulesDiv = $('<div class="modal" id="rules"></div>').appendTo($deck);
+  $rulesDiv = $('<div class="modal" id="rules"></div>').appendTo($deckDiv);
   $rulesTitle = $('<h2 class="modal-title">Rules</h2>').appendTo($rulesDiv);
   $rulesSpan = $('<span id="rules-text"></span>').appendTo($rulesDiv);
   $rulesText.appendTo($rulesSpan);
   $demoCardDiv = $('<div class="demo-card-div">').appendTo($rulesDiv);
+  $demoCardUl = $('<ul class="demo-card-ul">').appendTo($demoCardDiv);
   // calls the function to create a demo card
   demoCard();
   console.log('rules are being shown');
@@ -44,9 +45,9 @@ function showRules(){
 };
 
 function showStats(){
-  $deck.empty();
+  $deckDiv.empty();
   clearTimer();
-  $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deck);
+  $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deckDiv);
   $statsTitle = $('<h2 class="modal-title">Stats</h2>').appendTo($statsDiv);
   $statsSpan = $('<span id="stats-text"></span>').appendTo($statsDiv);
   $statsText.appendTo($statsSpan);
@@ -57,7 +58,7 @@ function gameOver() {
   clearTimer();
   setBestScore();
   $deck.empty();
-  $gameOverDiv = $('<div class="modal" id="game-over-div">').appendTo($deck);
+  $gameOverDiv = $('<div class="modal" id="game-over-div">').appendTo($deckDiv);
   $gameOverSpan = $('<span class="game-over blink_me" id="game-over-span">').appendTo($gameOverDiv);
   $gameOverSpan.html('Game Over!');
   $gameScoreDiv = $('<div class="game-score-div">').appendTo($gameOverDiv);

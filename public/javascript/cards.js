@@ -33,7 +33,7 @@ Card.prototype = {
     var view = this;
     if (!this.$element){
       view.render();
-      $demoCardDiv.append(view.$element);
+      $demoCardUl.append(view.$element);
     }
   },
 };

@@ -102,7 +102,6 @@ button {
   height:30em;
 }
 
-
 #game-over-span {
   position: relative;
   font-size: 7em;
@@ -117,15 +116,26 @@ button {
   right: 7px;
   top: 4px;
   text-align: right;
-  font-size: 16px;
-  color: red;
+  font-size: 2em;
+  color: black;
   font-weight: 700;
+}
+
+#game-score-span {
+  top: 9em;
+  right: 10.6em;
+  color: black;
+}
+
+#best-score-span {
+  top: 11em;
+  right: 11em;
+  font-size: 2em;
 }
 
 #interval {
   color: #7FFF00;
 }
-
 
 h1 {
   text-align: center;
@@ -154,13 +164,6 @@ h1 {
   height: 18em;
   font-size: 8px;
   position: relative;
-}
-
-#demo-card {
-  position: relative;
-  z-index: 1;
-  top: 30px;
-  margin-left: 174px;
 }
 
 .make-molecule-div {
@@ -290,4 +293,10 @@ li {
     background: #000;
     opacity: 0.5;
     filter: alpha(opacity=50);
+}
+
+.demo-card-ul {
+  position: absolute;
+  top: 23em;
+  left: 22em;
 }

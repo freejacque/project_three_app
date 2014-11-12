@@ -14,7 +14,7 @@ $( document ).ready(function() {
   $box1 = $('.box#1');
   atomicNumbers = [];
   deck = [];
-  $deck  = $('.deck-div');
+  $deckDiv  = $('.deck-div');
   $stats = $('#player-stats');
   $rules = $('#game-rules');
   $timer = $('#interval');
