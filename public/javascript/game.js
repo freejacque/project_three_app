@@ -150,13 +150,9 @@ function setBestScore(){
     $.jStorage.set("bestScore", score);
     // sets the date the new best score was achieved
     var date = new Date().getTime();
-    debugger
     var bestScoreDate = new Date(date);
     $bestScoreDate = bestScoreDate.toDateString();
     debugger
     $.jStorage.set("bestScoreDate", $bestScoreDate);
-  }; //else {
-  //   best score stays the same
-  //   bestScore = bestScore;
-  // };
+  };
 };

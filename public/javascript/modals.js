@@ -1,3 +1,4 @@
+// the text that is shown in the rulesDiv
 var $rulesText  = $('<ul id="rules-ul"><li>' +
                 'The object of the game is to create ionic compounds using cards' +
                 ' like the one below. Each card has a charge in the upper right corner.' +
@@ -44,19 +45,24 @@ function showStats(){
                    ' points made on ' +
                    $.jStorage.get("bestScoreDate") +
                   '.</li></ul>');
+  // clears anything already on this section of the DOM
   $deckDiv.empty();
+  // stops and clears the timer
   clearTimer();
   $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deckDiv);
   $statsTitle = $('<h2 class="modal-title">Stats</h2>').appendTo($statsDiv);
   $statsSpan = $('<span id="stats-text"></span>').appendTo($statsDiv);
   $statsText.appendTo($statsSpan);
+  // sets a event listener to remove the stats div from the DOM
   $statsDiv.on('click', removeStatsDiv);
 };
 
 
 function gameOver() {
   clearTimer();
+  // sets the new best score if the new score is higher
   setBestScore();
+  // removes all remaining cards from the DOM
   $deck.empty();
   $gameOverDiv = $('<div class="modal" id="game-over-div">').appendTo($deckDiv);
   $gameOverSpan = $('<span class="game-over blink_me" id="game-over-span">').appendTo($gameOverDiv);
@@ -65,10 +71,13 @@ function gameOver() {
   $gameScoreSpan = $('<span class="score-span" id="game-score-span">').html("Current Score: " + score + " pts").appendTo($gameScoreDiv);
   $bestScoreDiv = $('<div class="game-score-div">').appendTo($gameOverDiv);
   $bestScoreSpan = $('<span class="score-span" id="best-score-span">').html("Best Score: " + $bestScore + " pts").appendTo($bestScoreDiv);
+  // makes the Game Over text flash
   setInterval(blinker, 1000);
+  // sets an event listener to remove the gameOverDiv
   $gameOverDiv.on('click', removeGameOverDiv);
 };
 
+// this function makes the text blink
 function blinker(){
     $('.blink_me').fadeOut(500);
     $('.blink_me').fadeIn(500);
