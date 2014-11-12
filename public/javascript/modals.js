@@ -9,6 +9,13 @@ $rulesText  = $('<ul id="rules-ul"><li>' +
                 ' ' +
                 '</li></ul>');
 
+$statsText  = $('<ul id="stats-ul"><li>' +
+                'Your best score is: ' +
+                 bestScore +
+                ' made on ' +
+                 bestScoreDate +
+                '</li></ul>');
+
 // creates a demo card for the rules
 function demoCard(){
   atomicNumber = 1;
@@ -36,6 +43,17 @@ function showRules(){
   $rulesDiv.on('click', removeRulesDiv);
 };
 
+function showStats(){
+  $deck.empty();
+  clearTimer();
+  $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deck);
+  $statsTitle = $('<h2 class="modal-title">Stats</h2>').appendTo($statsDiv);
+  $statsSpan = $('<span id="stats-text"></span>').appendTo($statsDiv);
+  debugger
+  $statsText.appendTo($statsSpan);
+  $statsDiv.on('click', removeStatsDiv);
+};
+
 function gameOver() {
   clearTimer();
   setBestScore();
@@ -51,7 +69,7 @@ function gameOver() {
   $gameOverDiv.on('click', removeGameOverDiv);
 };
 
-function blinker() {
+function blinker(){
     $('.blink_me').fadeOut(500);
     $('.blink_me').fadeIn(500);
 };
@@ -72,6 +90,12 @@ function removeRulesDiv(){
   removeDiv($rulesDiv);
 };
 
+// calls the removeDiv function for the $statsDiv eventListener
+function removeStatsDiv(){
+  removeDiv($statsDiv);
+};
+
+// calls the removeDiv function for the $gameOverDiv eventListener
 function removeGameOverDiv(){
   removeDiv($gameOverDiv);
 };

@@ -90,12 +90,24 @@ button {
   height:30em;
 }
 
+
 #game-over-span {
   position: relative;
   font-size: 7em;
   color: red;
   top: 1em;
   left: 121px;
+}
+
+.score-span {
+  display: inline;
+  position: absolute;
+  right: 7px;
+  top: 4px;
+  text-align: right;
+  font-size: 16px;
+  color: red;
+  font-weight: 700;
 }
 
 #interval {
@@ -195,7 +207,6 @@ h1 {
 .charge {
   display: inline;
   position: absolute;
-  right: 0;
   right: 7px;
   top: 4px;
   text-align: right;

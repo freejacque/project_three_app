@@ -1,3 +1,4 @@
+// setting variables for use throughout the game
 var $card = $('.card')
 var setVar;
 var $box = $('.box');
@@ -5,6 +6,7 @@ var that;
 var total;
 var score = 0;
 var bestScore = 0;
+var bestScoreDate;
 var $currentDraggables = [];
 var numberOfCardsUsed = 0;
 
@@ -139,8 +141,12 @@ function resetBoard(){
 
 function setBestScore(){
   if(score > bestScore){
+    // sets the current score as the best score
     bestScore = score;
-  } else {
-    bestScore = bestScore;
-  }
+    // sets the date the new best score was achieved
+    bestScoreDate = Date.now;
+  }; //else {
+    // best score stays the same
+  //   bestScore = bestScore;
+  // }
 };

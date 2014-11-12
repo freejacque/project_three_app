@@ -69,7 +69,8 @@ $( document ).ready(function() {
       symbol: "C",
       electronConfiguration: "2-4",
       category: "nonmetal",
-      charges: [-4]
+      charges: [-4],
+      compundName: "carbonide"
       },
     7: {
       atomicNumber: 7,
@@ -77,7 +78,8 @@ $( document ).ready(function() {
       symbol: "N",
       electronConfiguration: "2-5",
       category: "nonmetal",
-      charges: [-3]
+      charges: [-3],
+      compundName: "nitride"
       },
     8: {
       atomicNumber: 8,
@@ -85,7 +87,8 @@ $( document ).ready(function() {
       symbol: "O",
       electronConfiguration: "2-6",
       category: "nonmetal",
-      charges: [-2]
+      charges: [-2],
+      compundName: "oxide"
       },
     9: {
       atomicNumber: 9,
@@ -93,7 +96,8 @@ $( document ).ready(function() {
       symbol: "F",
       electronConfiguration: "2-7",
       category: "nonmetal",
-      charges: [-1]
+      charges: [-1],
+      compundName: "fluoride"
       },
     10: {
       atomicNumber: 10,
@@ -141,7 +145,8 @@ $( document ).ready(function() {
       symbol: "P",
       electronConfiguration: "2-8-5",
       category: "nonmetal",
-      charges: [-3]
+      charges: [-3],
+      compundName: "phosphide"
       },
     16: {
       atomicNumber: 16,
@@ -149,7 +154,8 @@ $( document ).ready(function() {
       symbol: "S",
       electronConfiguration: "2-8-6",
       category: "nonmetal",
-      charges: [-2]
+      charges: [-2],
+      compundName: "sulfide"
       },
     17: {
       atomicNumber: 17,
@@ -157,7 +163,8 @@ $( document ).ready(function() {
       symbol: "Cl",
       electronConfiguration: "2-8-7",
       category: "nonmetal",
-      charges: [-1]
+      charges: [-1],
+      compundName: "chloride"
       },
     18: {
       atomicNumber: 18,
@@ -245,7 +252,8 @@ $( document ).ready(function() {
       symbol: "As",
       electronConfiguration: "2-8-18-5",
       category: "metalloid",
-      charges: [-3]
+      charges: [-3],
+      compundName: "arsenide"
       },
     34: {
       atomicNumber: 34,
@@ -253,7 +261,8 @@ $( document ).ready(function() {
       symbol: "Se",
       electronConfiguration: "2-8-18-6",
       category: "nonmetal",
-      charges: [-2]
+      charges: [-2],
+      compundName: "selenide"
       },
     35: {
       atomicNumber: 35,
@@ -261,7 +270,8 @@ $( document ).ready(function() {
       symbol: "Br",
       electronConfiguration: "2-8-18-7",
       category: "nonmetal",
-      charges: [-1]
+      charges: [-1],
+      compundName: "bromide"
       },
     36: {
       atomicNumber: 36,
@@ -278,6 +288,7 @@ $( document ).ready(function() {
     seedAtomicNumbers();
     $newGame.on('click', getElements);
     $rules.on('click', showRules);
+    $stats.on('click', showStats);
     $box1.on('drop', addOnDrop);
 });  //document ready function end(don't erase!!!!)
 
