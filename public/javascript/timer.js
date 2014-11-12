@@ -6,9 +6,13 @@ function setTimer(){
 
 // increments the counter by 1 and sets it as the timer html
 function count(){
-  $timer = $('#interval');
-  counter++;
-  $timer.html(counter);
+  if(counter === 60){
+    gameOver();
+  } else {
+    $timer = $('#interval');
+    counter++;
+    $timer.html(counter);
+  }
 };
 
 // executes the count function every second.
