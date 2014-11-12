@@ -17,6 +17,7 @@ $( document ).ready(function() {
   $deck  = $('.deck-div');
   $stats = $('#player-stats');
   $rules = $('#game-rules');
+  $timer = $('#interval');
 
 
   // elements were selected for their frequent use.

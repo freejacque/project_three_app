@@ -9,7 +9,6 @@ function count(){
   if(counter === 60){
     gameOver();
   } else {
-    $timer = $('#interval');
     counter++;
     $timer.html(counter);
   }
@@ -24,4 +23,5 @@ function set(){
 function clearTimer(){
   clearInterval(setVar);
   counter = 0;
+  $timer.html("");
 };
