@@ -81,10 +81,10 @@ button {
 }
 
 #stats {
-  width: 20em;
-  height: 20em;
   position: relative;
-  left: -53px;
+  left: -90px;
+  width: 48em;
+  height: 14em;
 }
 
 #stats-ul {

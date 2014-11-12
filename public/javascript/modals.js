@@ -38,12 +38,12 @@ function showRules(){
 };
 
 function showStats(){
-  var $statsText  = $('<ul id="stats-ul"><li>' +
+  var $statsText  = $('<ul id="stats-ul"><li style="margin-left: 1em">' +
                   'Your best score is: ' +
                    $.jStorage.get("bestScore") +
-                  ' made on ' +
+                   ' points made on ' +
                    $.jStorage.get("bestScoreDate") +
-                  '</li></ul>');
+                  '.</li></ul>');
   $deckDiv.empty();
   clearTimer();
   $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deckDiv);
