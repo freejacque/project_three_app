@@ -136,17 +136,3 @@ function resetBoard(){
   numberOfCardsUsed = 0;
 };
 
-function gameOver() {
-  clearTimer();
-  $deck.empty();
-  $gameOverDiv = $('<div class="modal" id="game-over-div">').appendTo($deck);
-  $gameOverSpan = $('<span class="game-over blink_me" id="game-over-span">').appendTo($gameOverDiv);
-  $gameOverSpan.html('Game Over!');
-  setInterval(blinker, 1000);
-};
-
-function blinker() {
-    $('.blink_me').fadeOut(500);
-    $('.blink_me').fadeIn(500);
-};
-

@@ -36,6 +36,21 @@ function showRules(){
   $rulesDiv.on('click', removeRulesDiv);
 };
 
+function gameOver() {
+  clearTimer();
+  $deck.empty();
+  $gameOverDiv = $('<div class="modal" id="game-over-div">').appendTo($deck);
+  $gameOverSpan = $('<span class="game-over blink_me" id="game-over-span">').appendTo($gameOverDiv);
+  $gameOverSpan.html('Game Over!');
+  setInterval(blinker, 1000);
+  $gameOverDiv.on('click', removeGameOverDiv);
+};
+
+function blinker() {
+    $('.blink_me').fadeOut(500);
+    $('.blink_me').fadeIn(500);
+};
+
 // creates sub divs inside of $demoCardDiv to label the demoCard
 function demoCardSubDivs(){
 
@@ -50,4 +65,8 @@ function removeDiv(divToDelete){
 // calls the removeDiv function for the $rulesDiv eventListener
 function removeRulesDiv(){
   removeDiv($rulesDiv);
+};
+
+function removeGameOverDiv(){
+  removeDiv($gameOverDiv);
 };
