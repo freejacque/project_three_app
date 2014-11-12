@@ -152,7 +152,6 @@ function setBestScore(){
     var date = new Date().getTime();
     var bestScoreDate = new Date(date);
     $bestScoreDate = bestScoreDate.toDateString();
-    debugger
     $.jStorage.set("bestScoreDate", $bestScoreDate);
   };
 };
