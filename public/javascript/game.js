@@ -4,6 +4,7 @@ var $box = $('.box');
 var that;
 var total;
 var score = 0;
+var bestScore = 0;
 var $currentDraggables = [];
 var numberOfCardsUsed = 0;
 
@@ -136,3 +137,10 @@ function resetBoard(){
   numberOfCardsUsed = 0;
 };
 
+function setBestScore(){
+  if(score > bestScore){
+    bestScore = score;
+  } else {
+    bestScore = bestScore;
+  }
+};

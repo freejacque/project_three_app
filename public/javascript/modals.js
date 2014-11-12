@@ -38,10 +38,15 @@ function showRules(){
 
 function gameOver() {
   clearTimer();
+  setBestScore();
   $deck.empty();
   $gameOverDiv = $('<div class="modal" id="game-over-div">').appendTo($deck);
   $gameOverSpan = $('<span class="game-over blink_me" id="game-over-span">').appendTo($gameOverDiv);
   $gameOverSpan.html('Game Over!');
+  $gameScoreDiv = $('<div class="game-score-div">').appendTo($gameOverDiv);
+  $gameScoreSpan = $('<span class="score-span" id="game-score-span">').html("Current Score: " + score + " pts").appendTo($gameScoreDiv);
+  $bestScoreDiv = $('<div class="game-score-div">').appendTo($gameOverDiv);
+  $bestScoreSpan = $('<span class="score-span" id="best-score-span">').html("Best Score: " + bestScore + " pts").appendTo($bestScoreDiv);
   setInterval(blinker, 1000);
   $gameOverDiv.on('click', removeGameOverDiv);
 };
