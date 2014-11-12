@@ -4,7 +4,7 @@ function setTimer(){
   console.log(setVar);
 };
 
-// incremnets the counter by 1 and sets it as the timer html
+// increments the counter by 1 and sets it as the timer html
 function count(){
   $timer = $('#interval');
   counter++;

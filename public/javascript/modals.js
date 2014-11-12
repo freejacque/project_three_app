@@ -1,11 +1,13 @@
 
-$rulesText  = $('<ul id="rules-ul"><li>The object of the game is to create an ionic compound.</li>' +
-          '<li>You can do this by bonding positively charged ions and</li>' +
-          '<li>negatively charged ions until they create a net charge of zero.</li>' +
-          '<li>Each card is labeled in the upper right corner with a charge.</li>' +
-          '<li>Once the net charge equals zero you will earn a point.</li>' +
-          '<li>Earn as many points as you can in one minute by dragging cards </li>' +
-          '<li>and dropping them on the gray square on the right of the board.</li></ul>');
+$rulesText  = $('<ul id="rules-ul"><li>' +
+                'The object of the game is to create ionic compounds using cards' +
+                ' like the one below. Each card has a charge in the upper right corner.' +
+                ' When a card is placed inside the gray box on the right side of' +
+                ' the board a number will appear beside net charge.' +
+                ' Once you have achieved a net charge of zero, you will earn a point.' +
+                ' ' +
+                ' ' +
+                '</li></ul>');
 
 // creates a demo card for the rules
 function demoCard(){
@@ -17,14 +19,26 @@ function demoCard(){
 
 // creates a rules div, displays rules content & appends to DOM
 function showRules(){
+  // clears any cards that may be displaying
+  $deck.empty();
+  // clears the timer
+  clearTimer();
+  // appends a rules div to the main page
   $rulesDiv = $('<div class="modal" id="rules"></div>').appendTo($deck);
   $rulesTitle = $('<h2 class="modal-title">Rules</h2>').appendTo($rulesDiv);
   $rulesSpan = $('<span id="rules-text"></span>').appendTo($rulesDiv);
   $rulesText.appendTo($rulesSpan);
   $demoCardDiv = $('<div class="demo-card-div">').appendTo($rulesDiv);
+  // calls the function to create a demo card
   demoCard();
   console.log('rules are being shown');
+  // sets an event listener to remove the rules div on click
   $rulesDiv.on('click', removeRulesDiv);
+};
+
+// creates sub divs inside of $demoCardDiv to label the demoCard
+function demoCardSubDivs(){
+
 };
 
 // removes a div from the DOM
@@ -33,6 +47,7 @@ function removeDiv(divToDelete){
   console.log("div deleted");
 };
 
+// calls the removeDiv function for the $rulesDiv eventListener
 function removeRulesDiv(){
   removeDiv($rulesDiv);
 };

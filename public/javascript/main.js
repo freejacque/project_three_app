@@ -4,6 +4,7 @@ $( document ).ready(function() {
   console.log( "ready!" );
   // setting variables for use throughout the app.
   $window = $('window');
+  $mainPage = $('main-page');
   $body = $('body');
   $newGame = $('#new-game');
   counter = 0;

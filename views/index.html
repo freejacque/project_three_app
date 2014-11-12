@@ -16,7 +16,6 @@
     <script type="text/javascript" src="javascript/underscore.js"></script>
     <script type="text/javascript" src="javascript/main.js"></script>
     <script type="text/javascript" src="javascript/timer.js"></script>
-    <script type="text/javascript" src="javascript/modals.js"></script>
   </head>
 
   <body>
@@ -59,7 +58,7 @@
           </div>
           <div class="info">
             <div class="atomic-number"><span><%= element.atomicNumber%></span></div>
-            <div class="electron_config"><span><%= element.electronConfiguration%></span></div>
+            <div class="electron-config"><span><%= element.electronConfiguration%></span></div>
           </div>
           <div class="category">
             <span><%= element.category%></span>
@@ -67,7 +66,28 @@
         </div>
       </li>
     </script>
+    <script type="text/template" id="demo-card-div">
+      <li>
+        <div class="demo-card-labels">
+          <div class="charge-label">
+            <span>The Charge</span>
+          </div>
+          <div class="plate-label">
+            <div class="symbol-label"><span><%= element.symbol%></span></div>
+            <div class="name-label"><span><%= element.name%></span></div>
+          </div>
+          <div class="info-label">
+            <div class="atomic-number-label"><span><%= element.atomicNumber%></span></div>
+            <div class="electron-config-label"><span><%= element.electronConfiguration%></span></div>
+          </div>
+          <div class="category-label">
+            <span><%= element.category%></span>
+          </div>
+        </div>
+      </li>
+    </script>
     <script type="text/javascript" src="javascript/game.js"></script>
     <script type="text/javascript" src="javascript/cards.js"></script>
+    <script type="text/javascript" src="javascript/modals.js"></script>
   </body>
 </html>
