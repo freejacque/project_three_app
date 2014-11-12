@@ -7,6 +7,7 @@ var total;
 var score = 0;
 var bestScore = 0;
 var bestScoreDate;
+var newBestScore;
 var $currentDraggables = [];
 var numberOfCardsUsed = 0;
 
@@ -143,6 +144,7 @@ function setBestScore(){
   if(score > bestScore){
     // sets the current score as the best score
     bestScore = score;
+    newBestScore = score;
     // sets the date the new best score was achieved
     bestScoreDate = Date.now;
   }; //else {

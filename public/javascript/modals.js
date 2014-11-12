@@ -1,17 +1,17 @@
 
-$rulesText  = $('<ul id="rules-ul"><li>' +
+var $rulesText  = $('<ul id="rules-ul"><li>' +
                 'The object of the game is to create ionic compounds using cards' +
                 ' like the one below. Each card has a charge in the upper right corner.' +
-                ' When a card is placed inside the gray box on the right side of' +
+                '<li> When a card is placed inside the gray box on the right side of' +
                 ' the board a number will appear beside net charge.' +
-                ' Once you have achieved a net charge of zero, you will earn a point.' +
-                ' ' +
-                ' ' +
+                ' Once you have achieved a net charge of zero, you will earn a point.</li>' +
+                '<li> Earn as many points as you can in 60 seconds.' +
+                ' Remember that the positive ion(s) always go first.' +
                 '</li></ul>');
 
-$statsText  = $('<ul id="stats-ul"><li>' +
+var $statsText  = $('<ul id="stats-ul"><li>' +
                 'Your best score is: ' +
-                 bestScore +
+                 newBestScore +
                 ' made on ' +
                  bestScoreDate +
                 '</li></ul>');
@@ -49,7 +49,6 @@ function showStats(){
   $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deck);
   $statsTitle = $('<h2 class="modal-title">Stats</h2>').appendTo($statsDiv);
   $statsSpan = $('<span id="stats-text"></span>').appendTo($statsDiv);
-  debugger
   $statsText.appendTo($statsSpan);
   $statsDiv.on('click', removeStatsDiv);
 };
