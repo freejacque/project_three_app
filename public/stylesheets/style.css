@@ -74,10 +74,22 @@ button {
 
 .modal-title{
   font-size: 14px;
-  color: gray;
+  color: blue;
   margin-left: 35px;
   font-size: 20px;
   margin-bottom: -8px;
+}
+
+#stats {
+  width: 20em;
+  height: 20em;
+  position: relative;
+  left: -53px;
+}
+
+#stats-ul {
+  margin-top: 2em;
+  font-size: 1.5em;
 }
 
 #rules-text{
