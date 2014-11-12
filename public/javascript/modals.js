@@ -1,3 +1,5 @@
+var $newBestScore = $.jStorage.get("bestScore");
+// var $bestScoreDate = $.jStorage.get(bestScoreDate);
 
 var $rulesText  = $('<ul id="rules-ul"><li>' +
                 'The object of the game is to create ionic compounds using cards' +
@@ -11,9 +13,9 @@ var $rulesText  = $('<ul id="rules-ul"><li>' +
 
 var $statsText  = $('<ul id="stats-ul"><li>' +
                 'Your best score is: ' +
-                 newBestScore +
+                 $newBestScore +
                 ' made on ' +
-                 bestScoreDate +
+                 // $bestScoreDate +
                 '</li></ul>');
 
 // creates a demo card for the rules

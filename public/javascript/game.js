@@ -10,6 +10,7 @@ var bestScoreDate;
 var newBestScore;
 var $currentDraggables = [];
 var numberOfCardsUsed = 0;
+var elementsUsed = [];
 
 
 // seeds atomic numbers
@@ -81,7 +82,8 @@ function addCharge(that){
   $dataNew = that;
   // grabs the charge and sign from the dropped card as a string
   $chargesStr = that.draggable.context.innerText[0] + that.draggable.context.innerText[1];
-  debugger
+
+  elementsUsed.push(that.draggable.data);
   // parses the charges into integers so they can be used in calculations
   var charge = $.parseJSON($chargesStr);
   var $chargesAdded = 0;
@@ -146,9 +148,10 @@ function setBestScore(){
   if(score > bestScore){
     // sets the current score as the best score
     bestScore = score;
-    newBestScore = score;
+    $.jStorage.set("bestScore", bestScore);
     // sets the date the new best score was achieved
     bestScoreDate = Date.now;
+    $.jStorage.set("bestScoreDate", bestScoreDate);
   }; //else {
   //   best score stays the same
   //   bestScore = bestScore;

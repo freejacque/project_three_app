@@ -11,6 +11,7 @@ Card.prototype = {
     console.log(' view:render', this);
     var temp = this.template({element: this.element});
     this.$element = $(temp);
+    name = this.element.compoundName;
     // makes each card draggable
     this.$element.draggable({
       snap: '.box',
@@ -19,6 +20,7 @@ Card.prototype = {
       stack: '.card',
     });
     return this;
+
   },
 
   init: function(){
