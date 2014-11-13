@@ -37,7 +37,7 @@ function getElements(){
 function setVariables(){
   $deckDiv.empty();
   $moleculeBox = $('#molecule-box');
-  $deck = $('<ul id="deck">').appendTo($deckDiv);
+  $deck = $('<ul id="deck" style="cursor: pointer">').appendTo($deckDiv);
   // clear the cards
   $deck.html("");
   clearTimer();

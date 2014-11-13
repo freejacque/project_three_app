@@ -25,7 +25,7 @@ function showRules(){
   // clears the timer
   clearTimer();
   // appends a rules div to the main page
-  $rulesDiv = $('<div class="modal" id="rules"></div>').appendTo($deckDiv);
+  $rulesDiv = $('<div class="modal" id="rules" style="cursor: pointer"></div>').appendTo($deckDiv);
   $rulesTitle = $('<h2 class="modal-title">Rules</h2>').appendTo($rulesDiv);
   $rulesSpan = $('<span id="rules-text"></span>').appendTo($rulesDiv);
   $rulesText.appendTo($rulesSpan);
@@ -49,7 +49,7 @@ function showStats(){
   $deckDiv.empty();
   // stops and clears the timer
   clearTimer();
-  $statsDiv = $('<div class="modal" id="stats"></div>').appendTo($deckDiv);
+  $statsDiv = $('<div class="modal" id="stats" style="cursor: pointer"></div>').appendTo($deckDiv);
   $statsTitle = $('<h2 class="modal-title">Stats</h2>').appendTo($statsDiv);
   $statsSpan = $('<span id="stats-text"></span>').appendTo($statsDiv);
   $statsText.appendTo($statsSpan);
@@ -64,7 +64,7 @@ function gameOver() {
   setBestScore();
   // removes all remaining cards from the DOM
   $deck.empty();
-  $gameOverDiv = $('<div class="modal" id="game-over-div">').appendTo($deckDiv);
+  $gameOverDiv = $('<div class="modal" id="game-over-div" style="cursor: pointer">').appendTo($deckDiv);
   $gameOverSpan = $('<span class="game-over blink_me" id="game-over-span">').appendTo($gameOverDiv);
   $gameOverSpan.html('Game Over!');
   $gameScoreDiv = $('<div class="game-score-div">').appendTo($gameOverDiv);
