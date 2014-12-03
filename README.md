@@ -16,7 +16,7 @@ ChemPop is a one-page app made using JavaScript, HTML5, CSS and Sinatra. A playe
 ###Wireframe
 <img src="/public/images/wireframe.png" width="500px">
 
-###User Stories
+###Completed User Stories
 <ul>
 <li>User can click new game to start a new game. </li>
 <li>Users should be able to start a game without signing in.</li>
