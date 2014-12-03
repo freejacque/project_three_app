@@ -8,6 +8,11 @@ ChemPop is a one-page app made using JavaScript, HTML5, CSS and Sinatra. A playe
 JavaScript
 HTML 
 CSS 
+Ruby
 Sinatra
+SimpleStorage
 
+###Wireframe
+
+(https://github/freejacque/project_three_app/
 
