@@ -4,7 +4,7 @@
 ChemPop is a one-page app. A player is assigned a set of random cards, consisting of elements. The player must use the charges of the ions these elements will form to create ionic compounds. This can be accomplished by dragging cards to the gray square on the right side of the screen.
 
 
-<img src="/public/images/chempop.png" width="800px">
+<img src="/public/images/chempop_new.png" width="800px">
 
 
 ###Technologies Used
