@@ -13,6 +13,7 @@ gem 'pg',       '~> 0.17.1'
 group :development, :test do
   gem 'pry',     '0.10.1'
   gem 'sinatra-contrib'
+  gem 'shotgun'
 end
 
 # gems specific just in the production environment

@@ -3,9 +3,9 @@ body {
 }
 
 .card_space {
-  padding: 5px;
-  border: 5px;
-  border-spacing: 2px;
+  padding: 2%;
+  border: 2%;
+  border-spacing: 2%;
   position: absolute;
 }
 
@@ -324,68 +324,4 @@ li {
   background:#39d084;
   -moz-animation:photoshop 2s ease-out;
   -webkit-animation:photoshop 2s ease-out;
-}
- @-moz-keyframes ps2 {
-0% {
-width:0px;
-}
-100% {
-width:90%;
-}
-}
-@-moz-keyframes ai2 {
-0% {
-width:0px;
-}
-100% {
-width:80%;
-}
-}
-@-moz-keyframes html2 {
-0% {
-width:0px;
-}
-100% {
-width:75%;
-}
-}
-@-moz-keyframes css2 {
-0% {
-width:0px;
-}
-100% {
-width:85%;
-}
-}
- @-webkit-keyframes ps2 {
-0% {
-width:0px;
-}
-100% {
-width:90%;
-}
-}
-@-webkit-keyframes ai {
-0% {
-width:0px;
-}
-100% {
-width:80%;
-}
-}
-@-webkit-keyframes html {
-0% {
-width:0px;
-}
-100% {
-width:75%;
-}
-}
-@-webkit-keyframes css {
-0% {
-width:0px;
-}
-100% {
-width:85%;
-}
 }
